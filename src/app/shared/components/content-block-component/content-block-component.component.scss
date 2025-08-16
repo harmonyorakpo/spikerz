@@ -1,0 +1,11 @@
+.container {
+  @apply flex flex-col mb-8;
+}
+
+.description {
+  @apply text-primary text-xl font-bold mb-2;
+}
+
+.sub-text {
+  @apply text-xs leading-5;
+}

@@ -1,0 +1,31 @@
+.divider {
+  @apply w-full text-gray-400;
+}
+
+.divider-top {
+  @apply mb-3;
+}
+
+.divider-bottom {
+  @apply mt-3;
+}
+
+.data-list {
+  @apply flex flex-col gap-y-3;
+}
+
+.data-item {
+  @apply flex flex-row justify-between;
+}
+
+.data-label {
+  @apply font-semibold;
+}
+
+.data-value {
+  @apply text-sm;
+}
+
+.check-icon {
+  @apply text-green-500;
+}

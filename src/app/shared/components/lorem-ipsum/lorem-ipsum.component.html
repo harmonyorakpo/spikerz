@@ -1,0 +1,18 @@
+<hr class="divider divider-top" />
+
+<div class="data-list">
+  @for (item of dataItems; track $index) {
+  <div class="data-item">
+    <span class="data-label">{{ item.label }}</span>
+    <span class="data-value">
+      @if (item.hasCheck) {
+      <span class="check-icon">✓</span> {{ item.value }}
+      } @else {
+      {{ item.value }}
+      }
+    </span>
+  </div>
+  }
+</div>
+
+<hr class="divider divider-bottom" />
