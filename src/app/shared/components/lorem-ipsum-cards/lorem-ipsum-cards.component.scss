@@ -1,12 +1,12 @@
 .card-container {
-  @apply flex flex-col mt-4 gap-y-3;
+  @apply flex flex-col my-4 gap-y-3;
 }
 
 .main-title {
   @apply font-bold;
 }
 
-.card {
+.lorem-card {
   @apply flex flex-col border border-gray-200 bg-white rounded-2xl p-4 w-full overflow-hidden;
 }
 
