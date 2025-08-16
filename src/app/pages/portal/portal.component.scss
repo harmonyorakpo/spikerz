@@ -1,0 +1,11 @@
+.layout-container {
+  @apply flex;
+}
+
+.side-menu {
+  @apply mr-6 h-screen sticky top-0;
+}
+
+.main-content {
+  @apply flex-1 pt-8;
+}

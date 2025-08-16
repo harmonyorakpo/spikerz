@@ -41,7 +41,6 @@
     @apply bg-primary-light rounded-md;
   }
 
-  // Add hover effect to the entire menu item
   &:hover {
     .menu-text {
       @apply text-primary;
@@ -67,7 +66,7 @@
       @apply text-gray-500;
     }
 
-    // Override inactive color on hover with higher specificity
+    
     &.inactive:hover {
       @apply text-primary !important;
     }
@@ -81,7 +80,7 @@
     @apply bg-primary rounded-md;
   }
 
-  // Override hover for secondary menu
+  
   &:hover {
     .menu-text {
       @apply text-primary;
@@ -93,7 +92,7 @@
       @apply text-primary font-medium;
     }
 
-    // Specific hover override for secondary menu inactive items
+    
     &.inactive:hover {
       @apply text-primary !important;
     }
