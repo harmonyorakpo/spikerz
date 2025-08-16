@@ -1,6 +1,5 @@
 <div class="flex">
   <div class="sidebar-container">
-    <!-- Toggle Button -->
     <div class="toggle-button-wrapper">
       <div class="toggle-bg">
         <button (click)="toggleSideMenu()" class="toggle-btn">
@@ -16,8 +15,10 @@
       </div>
     </div>
 
-    <div class="sidebar-content" [ngClass]="{ 'expanded': showSideMenu, 'collapsed': !showSideMenu }">
-      <!-- Main Menu Items -->
+    <div
+      class="sidebar-content"
+      [ngClass]="{ expanded: showSideMenu, collapsed: !showSideMenu }"
+    >
       <div class="main-menu">
         <ng-container *ngFor="let menuItem of menuItems; let i = index">
           <ng-container
@@ -29,7 +30,9 @@
           >
             <div
               class="menu-item"
-              [ngClass]="{ 'active': menuItem.active || isActiveRoute(menuItem.path) }"
+              [ngClass]="{
+                active: menuItem.active || isActiveRoute(menuItem.path)
+              }"
               (click)="navigateToRoute(menuItem.path)"
             >
               <div class="menu-icon">
@@ -42,8 +45,8 @@
                 *ngIf="showSideMenu"
                 class="menu-text"
                 [ngClass]="{
-                  'active': menuItem.active || isActiveRoute(menuItem.path),
-                  'inactive': !menuItem.active && !isActiveRoute(menuItem.path)
+                  active: menuItem.active || isActiveRoute(menuItem.path),
+                  inactive: !menuItem.active && !isActiveRoute(menuItem.path)
                 }"
               >
                 {{ menuItem.title }}
@@ -53,7 +56,6 @@
         </ng-container>
       </div>
 
-      <!-- Secondary Menu Items (Support, Settings) -->
       <div class="secondary-menu">
         <ng-container *ngFor="let menuItem of menuItems">
           <ng-container
@@ -63,7 +65,9 @@
           >
             <div
               class="secondary-menu-item"
-              [ngClass]="{ 'active': menuItem.active || isActiveRoute(menuItem.path) }"
+              [ngClass]="{
+                active: menuItem.active || isActiveRoute(menuItem.path)
+              }"
               (click)="navigateToRoute(menuItem.path)"
             >
               <div class="menu-icon">
@@ -76,8 +80,8 @@
                 *ngIf="showSideMenu"
                 class="menu-text"
                 [ngClass]="{
-                  'active': menuItem.active || isActiveRoute(menuItem.path),
-                  'inactive': !menuItem.active && !isActiveRoute(menuItem.path)
+                  active: menuItem.active || isActiveRoute(menuItem.path),
+                  inactive: !menuItem.active && !isActiveRoute(menuItem.path)
                 }"
               >
                 {{ menuItem.title }}
@@ -87,14 +91,10 @@
         </ng-container>
       </div>
 
-      <!-- User Profile Section -->
       <div class="user-profile">
         <div class="user-avatar">
           <span>
-            <img
-              src="assets/menu-icons/profile.png"
-              alt="User Avatar"
-            />
+            <img src="assets/menu-icons/profile.png" alt="User Avatar" />
           </span>
         </div>
         <div *ngIf="showSideMenu" class="user-info">
