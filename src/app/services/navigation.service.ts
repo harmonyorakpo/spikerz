@@ -58,7 +58,7 @@ export class NavigationService {
       icon: 'tenants.png',
       active: false,
     },
-    // Bottom section items
+    
     {
       path: '/settings',
       title: 'Settings',
@@ -81,7 +81,7 @@ export class NavigationService {
 
   items = new BehaviorSubject<Navigation[]>(this.MENUITEMS);
 
-  // Method to update active state
+  
   setActiveItem(path: string) {
     this.MENUITEMS.forEach(item => {
       item.active = item.path === path;
@@ -89,18 +89,18 @@ export class NavigationService {
     this.items.next(this.MENUITEMS);
   }
 
-  // Method to add menu items dynamically if needed
+  
   addMenuItem(item: Navigation) {
     this.MENUITEMS.push(item);
     this.items.next(this.MENUITEMS);
   }
 
-  // Method to get menu item by path
+  
   getMenuItemByPath(path: string): Navigation | undefined {
     return this.MENUITEMS.find(item => item.path === path);
   }
 
-  // Method to reset all active states
+ 
   resetActiveStates() {
     this.MENUITEMS.forEach(item => {
       item.active = false;
