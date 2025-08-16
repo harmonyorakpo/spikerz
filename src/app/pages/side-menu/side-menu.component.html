@@ -1,1 +1,134 @@
-<p>side-menu works!</p>
+<div class="flex">
+  <!-- Sidebar -->
+  <div
+    class="hidden lg:block h-screen bg-white transition-all ease-in-out duration-300 mr-3"
+  >
+    <div
+      class="flex flex-col h-full mx-auto no-scrollbar pt-8"
+      [ngClass]="{ 'w-56': showSideMenu, 'w-24': !showSideMenu }"
+    >
+      <!-- Main Menu Items -->
+      <div class="flex-grow overflow-y-auto no-scrollbar">
+        <ng-container *ngFor="let menuItem of menuItems; let i = index">
+        
+          <ng-container
+            *ngIf="
+              menuItem.title !== 'Support' &&
+              menuItem.title !== 'Settings' &&
+              menuItem.title !== 'Profile'
+            "
+          >
+            <div
+              class="flex items-center py-3 px-4 mb-3 cursor-pointer transition-all duration-300"
+              (click)="navigateToRoute(menuItem.path)"
+              [ngClass]="{
+                'bg-primary-light rounded-md':
+                  menuItem.active || isActiveRoute(menuItem.path)
+              }"
+            >
+              <div class="flex justify-center min-w-8">
+                <img
+                  [src]="
+                    'assets/menu-icons/' +
+                    (menuItem.active && menuItem.iconActive
+                      ? menuItem.iconActive
+                      : menuItem.icon)
+                  "
+                  alt="{{ menuItem.title }}"
+                  class="w-5 h-5"
+                />
+              </div>
+              <span
+                *ngIf="showSideMenu"
+                class="text-sm hover:text-primary transition-opacity duration-300 ml-3"
+                [ngClass]="{
+                  'text-primary font-medium':
+                    menuItem.active || isActiveRoute(menuItem.path),
+                  'text-gray-500':
+                    !menuItem.active && !isActiveRoute(menuItem.path)
+                }"
+              >
+                {{ menuItem.title }}
+              </span>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+
+      <!-- Secondary Menu Items (Support, Settings) -->
+
+      <div>
+        <ng-container *ngFor="let menuItem of menuItems">
+          <ng-container
+            *ngIf="
+              menuItem.title === 'Support' || menuItem.title === 'Settings'
+            "
+          >
+            <div
+              class="flex items-center py-3 px-4 mb-3 cursor-pointer transition-all duration-300"
+              (click)="navigateToRoute(menuItem.path)"
+              [ngClass]="{
+                'bg-primary rounded-md':
+                  menuItem.active || isActiveRoute(menuItem.path)
+              }"
+            >
+              <div class="flex justify-center min-w-8">
+                <img
+                  [src]="
+                    'assets/menu-icons/' +
+                    (menuItem.active && menuItem.iconActive
+                      ? menuItem.iconActive
+                      : menuItem.icon)
+                  "
+                  alt="{{ menuItem.title }}"
+                  class="w-5 h-5"
+                />
+              </div>
+              <span
+                *ngIf="showSideMenu"
+                class="text-sm hover:text-primary transition-opacity duration-300 ml-3"
+                [ngClass]="{
+                  'text-primary-dark font-medium':
+                    menuItem.active || isActiveRoute(menuItem.path),
+                  'text-gray-500':
+                    !menuItem.active && !isActiveRoute(menuItem.path)
+                }"
+              >
+                {{ menuItem.title }}
+              </span>
+            </div>
+          </ng-container>
+        </ng-container>
+      </div>
+
+      <!-- User Profile Section -->
+      <div
+        class="flex items-center px-4 py-3 cursor-pointer transition-all duration-300 border-t border-gray-200 mt-2"
+      >
+        <div class="flex relative">
+          <span>
+            <img
+              class="w-10 h-10 rounded-full object-cover"
+              src="assets/menu-icons/profile.png"
+              alt="User Avatar"
+            />
+          </span>
+        </div>
+        <div *ngIf="showSideMenu" class="ml-3 flex-1">
+          <div class="flex flex-row items-center gap-1">
+            <p class="text-gray-800 text-xs font-semibold">Hello Harmony</p>
+          </div>
+          <p class="text-gray-400 text-xs">user&#64;spike.com</p>
+        </div>
+        <img
+          *ngIf="showSideMenu"
+          class="ml-auto h-5 w-5 text-gray-400 cursor-pointer hover:opacity-70 transition-opacity"
+          src="assets/menu-icons/logout.png"
+          alt="logout icon"
+          (click)="logout()"
+        />
+      </div>
+    </div>
+  </div>
+
+</div>

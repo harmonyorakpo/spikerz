@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReportsComponent } from './Reports/reports.component';
 import { PortalComponent } from './portal.component';
 
 export const PORTAL_ROUTES: Routes = [
@@ -7,8 +7,8 @@ export const PORTAL_ROUTES: Routes = [
     path: '',
     component: PortalComponent,
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: '', redirectTo: 'reports', pathMatch: 'full' },
+      { path: 'reports', component: ReportsComponent },
     ],
   },
 ];

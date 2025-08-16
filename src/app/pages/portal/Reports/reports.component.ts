@@ -4,9 +4,9 @@ import { LoremIpsumComponent } from "../../../shared/components/lorem-ipsum/lore
 import { LoremIpsumCardsComponent } from "../../../shared/components/lorem-ipsum-cards/lorem-ipsum-cards.component";
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'app-reports',
   imports: [ContentBlockComponentComponent, LoremIpsumComponent, LoremIpsumCardsComponent],
-  templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.scss',
+  templateUrl: './reports.component.html',
+  styleUrl: './reports.component.scss',
 })
-export class DashboardComponent {}
+export class ReportsComponent {}
