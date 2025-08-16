@@ -41,6 +41,13 @@
     @apply bg-primary-light rounded-md;
   }
 
+  // Add hover effect to the entire menu item
+  &:hover {
+    .menu-text {
+      @apply text-primary;
+    }
+  }
+
   .menu-icon {
     @apply flex justify-center min-w-8;
 
@@ -50,7 +57,7 @@
   }
 
   .menu-text {
-    @apply text-sm hover:text-primary transition-opacity duration-300 ml-3;
+    @apply text-sm transition-colors duration-300 ml-3;
 
     &.active {
       @apply text-primary font-medium;
@@ -58,6 +65,11 @@
 
     &.inactive {
       @apply text-gray-500;
+    }
+
+    // Override inactive color on hover with higher specificity
+    &.inactive:hover {
+      @apply text-primary !important;
     }
   }
 }
@@ -69,9 +81,21 @@
     @apply bg-primary rounded-md;
   }
 
+  // Override hover for secondary menu
+  &:hover {
+    .menu-text {
+      @apply text-primary;
+    }
+  }
+
   .menu-text {
     &.active {
       @apply text-primary font-medium;
+    }
+
+    // Specific hover override for secondary menu inactive items
+    &.inactive:hover {
+      @apply text-primary !important;
     }
   }
 }
