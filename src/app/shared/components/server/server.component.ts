@@ -5,16 +5,15 @@ import { Component, Input } from '@angular/core';
   selector: 'app-server',
   imports: [CommonModule],
   templateUrl: './server.component.html',
-  styleUrl: './server.component.scss'
+  styleUrl: './server.component.scss',
 })
 export class ServerComponent {
-@Input() serverName: string = 'Loremipsu';
-@Input() image: string = 'assets/icons/server.svg';
-@Input() background: string = 'bg-blue-100';
-@Input() showTopIcon: boolean = false;
-@Input() topIcon: string = 'assets/network-nodes/users.svg';
-@Input() circleSize: string = '12';
-@Input() iconSize: string = '6';
-@Input() topIconColor: string = 'bg-red-600';
-
+  @Input() serverName: string = 'Loremipsu';
+  @Input() image: string = 'assets/icons/server.svg';
+  @Input() background: string = 'bg-blue-100';
+  @Input() showTopIcon: boolean = false;
+  @Input() topIcon: string = 'assets/network-nodes/shield.svg';
+  @Input() circleSize: string = '12';
+  @Input() iconSize: string = '6';
+  @Input() topIconColor: string = 'bg-red-600';
 }

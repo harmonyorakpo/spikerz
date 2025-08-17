@@ -15,4 +15,19 @@ export default {
     },
   },
   plugins: [],
+  safelist: [
+    "text-red-600",
+    "text-orange-600",
+    "text-green-600",
+    "bg-red-600",
+    "bg-orange-600",
+    "bg-green-600",
+
+    {
+      pattern: /text-(red|orange|green)-(500|600)/,
+    },
+    {
+      pattern: /bg-(red|orange|green)-(500|600)/,
+    },
+  ],
 };

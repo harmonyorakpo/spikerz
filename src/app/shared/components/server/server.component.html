@@ -1,18 +1,24 @@
 <div class="flex flex-col items-center justify-center relative">
-  <!-- Purple Circle with Icon (conditional) -->
-  <div 
+  <div
     *ngIf="showTopIcon"
-    class="{{topIconColor}} rounded-full w-6 h-6 flex items-center justify-center absolute -top-4 -right-1 z-10">
+    class="{{
+      topIconColor
+    }} rounded-full w-6 h-6 flex items-center justify-center absolute -top-4 -right-1 z-10"
+  >
     <img class="w-4 h-4" [src]="topIcon" alt="top icon" />
   </div>
 
-  <!-- Main Server Icon -->
   <span
-    class="{{ background }} rounded-full w-{{ circleSize }} h-{{ circleSize }} flex items-center justify-center mb-1"
+    class="{{ background }} rounded-full w-{{ circleSize }} h-{{
+      circleSize
+    }} flex items-center justify-center mb-1"
   >
-    <img class="w-{{iconSize}} h-{{iconSize}}" [src]="image" alt="server icon" />
+    <img
+      class="w-{{ iconSize }} h-{{ iconSize }}"
+      [src]="image"
+      alt="server icon"
+    />
   </span>
 
-  <!-- Server Name -->
   <span class="text-xs font-medium text-gray-700">{{ serverName }}</span>
 </div>
