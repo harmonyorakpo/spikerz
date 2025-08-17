@@ -1,19 +1,41 @@
 .data-list {
-  @apply flex flex-col gap-y-3;
+  @apply flex flex-col;
+  @apply gap-y-2;
+  @apply md:gap-y-3;
 }
 
 .data-item {
-  @apply flex flex-row justify-between;
+  @apply flex justify-between;
+  @apply flex-col gap-1;
+  @apply md:flex-row md:gap-0;
 }
 
 .data-label {
   @apply font-semibold;
+  @apply text-sm;
+  @apply md:text-base;
 }
 
 .data-value {
-  @apply text-sm;
+  @apply text-xs;
+  @apply md:text-sm;
+  @apply lg:text-sm;
 }
 
 .check-icon {
   @apply text-green-500;
+}
+
+.divider {
+  @apply border-gray-200;
+}
+
+.divider-top {
+  @apply mb-3;
+  @apply md:mb-4;
+}
+
+.divider-bottom {
+  @apply mt-3;
+  @apply md:mt-4;
 }

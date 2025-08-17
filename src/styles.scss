@@ -26,6 +26,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   margin: 0;
@@ -43,7 +44,7 @@ app-root {
 }
 
 h1 {
-  @apply text-primary text-xl font-bold mb-3;
+  @apply text-primary text-xl font-bold;
 }
 
 .divider {

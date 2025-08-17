@@ -1,8 +1,9 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-content-block-component',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './content-block-component.component.html',
   styleUrl: './content-block-component.component.scss',
 })

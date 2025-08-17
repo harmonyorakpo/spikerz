@@ -1,56 +1,79 @@
 .asset-card {
-  @apply bg-white rounded-lg border border-gray-200 p-6 w-full flex flex-col;
+  @apply bg-white rounded-lg border border-gray-200 w-full flex flex-col;
+  @apply p-3;
+  @apply md:p-4;
+  @apply lg:p-6;
 }
 
 .asset-header {
-  @apply flex justify-between text-sm text-gray-500 font-medium mb-6;
+  @apply flex justify-between font-medium text-gray-500;
+  @apply text-xs mb-4;
+  @apply md:text-sm md:mb-5;
+  @apply lg:mb-6;
 }
 
 .asset-divider {
-  @apply border-gray-200 mb-4;
+  @apply border-gray-200;
+  @apply mb-3;
+  @apply md:mb-4;
 }
 
 .asset-content {
-  @apply space-y-4 flex-1;
+  @apply flex-1;
+  @apply space-y-3;
+  @apply md:space-y-4;
 }
 
 .asset-item {
   @apply flex justify-between items-center;
 
   &:not(:last-child) {
-    @apply mb-4;
+    @apply mb-3;
+    @apply md:mb-4;
   }
 }
 
 .asset-info {
-  @apply flex items-center;
+  @apply flex items-center min-w-0 flex-1;
 }
 
 .asset-icon-container {
-  @apply pr-3;
+  @apply pr-2;
+  @apply md:pr-3;
 }
 
 .asset-icon {
-  @apply w-5 h-5;
+  @apply w-4 h-4;
+  @apply md:w-5 md:h-5;
 }
 
 .asset-details {
-  @apply flex flex-col min-w-0;
+  @apply flex flex-col min-w-0 flex-1;
 }
 
 .asset-name {
-  @apply font-semibold text-sm text-gray-900 truncate;
+  @apply font-semibold text-gray-900 truncate;
+  @apply text-xs;
+  @apply md:text-sm;
 }
 
 .asset-ip {
-  @apply text-xs text-gray-500;
+  @apply text-gray-500;
+  @apply text-xs;
+  @apply md:text-sm;
+  @apply lg:text-xs;
 }
 
 .risk-badge {
-  @apply rounded-full px-4 py-1 cursor-pointer flex-shrink-0;
+  @apply rounded-full cursor-pointer flex-shrink-0;
+  @apply px-2 py-1;
+  @apply md:px-3 md:py-1;
+  @apply lg:px-4;
 
   span {
-    @apply text-sm font-semibold whitespace-nowrap;
+    @apply font-semibold whitespace-nowrap;
+    @apply text-xs;
+    @apply md:text-sm;
   }
 
   &.critical {
@@ -71,21 +94,28 @@
 }
 
 .pagination-container {
-  @apply flex justify-center items-center mt-4 pt-3 border-t border-gray-100;
+  @apply flex justify-center items-center border-t border-gray-100;
+  @apply mt-3 pt-2;
+  @apply md:mt-4 md:pt-3;
 }
 
 .pagination-controls {
-  @apply flex items-center space-x-2 text-sm text-gray-500;
+  @apply flex items-center text-gray-500;
+  @apply space-x-1 text-xs;
+  @apply md:space-x-2 md:text-sm;
 }
 
 .pagination-button {
-  @apply w-8 h-8;
+  @apply w-6 h-6;
+  @apply md:w-8 md:h-8;
 
   mat-icon {
-    @apply text-base;
+    @apply text-sm;
+    @apply md:text-base;
   }
 }
 
 .pagination-text {
-  @apply px-2;
+  @apply px-1;
+  @apply md:px-2;
 }

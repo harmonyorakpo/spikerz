@@ -1,30 +1,44 @@
 .card-container {
-  @apply flex flex-col my-4 gap-y-3;
+  @apply flex flex-col gap-y-2;
+  @apply my-3;
+  @apply md:my-4 md:gap-y-3;
 }
 
 .main-title {
   @apply font-bold;
+  @apply text-lg;
+  @apply md:text-xl;
+ 
 }
 
 .lorem-card {
-  @apply flex flex-col border border-gray-200 bg-white rounded-2xl p-4 w-full overflow-hidden;
+  @apply flex flex-col border border-gray-200 bg-white rounded-xl w-full overflow-hidden;
+  @apply p-3;
+  @apply md:p-4 md:rounded-2xl;
 }
 
 .card-title {
-  @apply font-semibold text-base mb-3 text-gray-800;
+  @apply font-semibold text-gray-800;
+  @apply text-sm mb-2;
+  @apply md:text-base md:mb-3;
 }
 
 .card-content {
-  @apply bg-gray-50 rounded-xl p-4 flex items-center justify-between gap-4 mb-2 cursor-pointer transition-all duration-200 ease-in-out hover:bg-gray-100;
+  @apply bg-gray-50 rounded-lg flex items-center justify-between cursor-pointer transition-all duration-200 ease-in-out hover:bg-gray-100;
+  @apply p-3 gap-3 mb-2;
+  @apply md:p-4 md:gap-4 md:rounded-xl;
 }
 
 .server-info {
-  @apply flex items-center gap-3 flex-shrink-0;
+  @apply flex items-center flex-shrink-0;
+  @apply gap-2;
+  @apply md:gap-3;
 }
 
-
 .server-icon {
-  @apply w-6 h-6 text-white;
+  @apply text-white;
+  @apply w-5 h-5;
+  @apply md:w-6 md:h-6;
 }
 
 .server-details {
@@ -32,11 +46,14 @@
 }
 
 .server-type {
-  @apply font-medium text-sm text-gray-900;
+  @apply font-medium text-gray-900;
+  @apply text-xs;
+  @apply md:text-sm;
 }
 
 .server-subtype {
-  @apply text-xs text-gray-500;
+  @apply text-gray-500;
+  @apply text-xs;
 }
 
 .vertical-divider {
@@ -44,7 +61,9 @@
 }
 
 .description {
-  @apply text-sm text-gray-700 flex-1 text-left;
+  @apply text-gray-700 flex-1 text-left;
+  @apply text-xs;
+  @apply md:text-sm;
 }
 
 .card-details-container {
@@ -52,9 +71,13 @@
 }
 
 .card-details-container.expanded {
-  @apply max-h-96 ease-in opacity-100 translate-y-0;
+  @apply ease-in opacity-100 translate-y-0;
+  @apply max-h-64;
+  @apply md:max-h-96;
 }
 
 .card-details {
-  @apply text-sm leading-relaxed;
+  @apply leading-relaxed;
+  @apply text-xs;
+  @apply md:text-sm;
 }
