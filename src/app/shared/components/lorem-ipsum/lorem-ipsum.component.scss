@@ -1,14 +1,4 @@
-.divider {
-  @apply w-full text-gray-400;
-}
 
-.divider-top {
-  @apply mb-3;
-}
-
-.divider-bottom {
-  @apply mt-3;
-}
 
 .data-list {
   @apply flex flex-col gap-y-3;

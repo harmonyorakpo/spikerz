@@ -1,0 +1,91 @@
+.asset-card {
+  @apply bg-white rounded-lg border border-gray-200 p-6 w-full flex flex-col;
+}
+
+.asset-header {
+  @apply flex justify-between text-sm text-gray-500 font-medium mb-6;
+}
+
+.asset-divider {
+  @apply border-gray-200 mb-4;
+}
+
+.asset-content {
+  @apply space-y-4 flex-1;
+}
+
+.asset-item {
+  @apply flex justify-between items-center;
+
+  &:not(:last-child) {
+    @apply mb-4;
+  }
+}
+
+.asset-info {
+  @apply flex items-center;
+}
+
+.asset-icon-container {
+  @apply pr-3;
+}
+
+.asset-icon {
+  @apply w-5 h-5;
+}
+
+.asset-details {
+  @apply flex flex-col min-w-0;
+}
+
+.asset-name {
+  @apply font-semibold text-sm text-gray-900 truncate;
+}
+
+.asset-ip {
+  @apply text-xs text-gray-500;
+}
+
+.risk-badge {
+  @apply rounded-full px-4 py-1 cursor-pointer flex-shrink-0;
+
+  span {
+    @apply text-sm font-semibold whitespace-nowrap;
+  }
+
+  &.critical {
+    @apply bg-red-100 text-red-700;
+  }
+
+  &.high {
+    @apply bg-orange-100 text-orange-700;
+  }
+
+  &.medium {
+    @apply bg-yellow-100 text-yellow-700;
+  }
+
+  &.low {
+    @apply bg-green-100 text-green-700;
+  }
+}
+
+.pagination-container {
+  @apply flex justify-center items-center mt-4 pt-3 border-t border-gray-100;
+}
+
+.pagination-controls {
+  @apply flex items-center space-x-2 text-sm text-gray-500;
+}
+
+.pagination-button {
+  @apply w-8 h-8;
+
+  mat-icon {
+    @apply text-base;
+  }
+}
+
+.pagination-text {
+  @apply px-2;
+}

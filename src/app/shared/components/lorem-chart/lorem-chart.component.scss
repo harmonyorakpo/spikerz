@@ -1,0 +1,58 @@
+.risk-card {
+  @apply bg-white rounded-lg border border-gray-200 p-6 w-full max-w-sm;
+}
+
+.risk-header {
+  @apply text-lg font-semibold text-gray-900 mb-6;
+}
+
+.risk-content {
+  @apply flex items-center justify-between;
+}
+
+.risk-legend {
+  @apply space-y-3;
+}
+
+.legend-item {
+  @apply flex items-center;
+}
+
+.legend-dot {
+  @apply w-3 h-3 rounded-full mr-3;
+
+  &.critical {
+    @apply bg-red-500;
+  }
+  &.high {
+    @apply bg-orange-500;
+  }
+  &.medium {
+    @apply bg-yellow-500;
+  }
+  &.low {
+    @apply bg-green-500;
+  }
+}
+
+.legend-text {
+  @apply text-sm text-gray-700 font-medium;
+}
+
+.chart-container {
+  @apply relative;
+}
+
+.chart-canvas {
+  display: block !important;
+  width: 120px !important;
+  height: 120px !important;
+}
+
+.chart-center-text {
+  @apply absolute inset-0 flex items-center justify-center pointer-events-none;
+
+  span {
+    @apply text-3xl font-bold text-gray-900;
+  }
+}

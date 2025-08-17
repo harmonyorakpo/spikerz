@@ -18,7 +18,7 @@ html {
       density: 0,
     )
   );
-} 
+}
 
 html,
 body {
@@ -40,4 +40,28 @@ app-root {
 
 .card {
   @apply bg-white rounded-2xl shadow-md mb-8 px-6 pt-6;
+}
+
+h1 {
+  @apply text-primary text-xl font-bold mb-2;
+}
+
+.divider {
+  @apply w-full text-gray-400;
+}
+
+.divider-bottom {
+  @apply mt-3;
+}
+
+.divider-top {
+  @apply mb-3;
+}
+
+.icon-container {
+  @apply w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center;
+}
+
+.icon-container-sm {
+  @apply w-10 h-10  bg-blue-100 rounded-full flex items-center justify-center;
 }

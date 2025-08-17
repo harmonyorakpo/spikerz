@@ -1,1 +1,33 @@
-<p>lorem-chart works!</p>
+<div class="risk-card">
+  <h3 class="risk-header">Contextual Risk</h3>
+
+  <div class="risk-content">
+    <div class="risk-legend">
+      <div class="legend-item">
+        <div class="legend-dot critical"></div>
+        <span class="legend-text">{{ riskData.critical }} Critical</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot high"></div>
+        <span class="legend-text">{{ riskData.high }} High</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot medium"></div>
+        <span class="legend-text">{{ riskData.medium }} Medium</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot low"></div>
+        <span class="legend-text">{{ riskData.low }} Low</span>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas #chartCanvas [width]="120" [height]="120" class="chart-canvas">
+      </canvas>
+
+      <div class="chart-center-text">
+        <span>{{ totalCritical }}</span>
+      </div>
+    </div>
+  </div>
+</div>

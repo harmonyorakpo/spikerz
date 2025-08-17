@@ -1,1 +1,65 @@
-<p>contextual-risk-chart works!</p>
+<div class="asset-card">
+  <div class="asset-header">
+    <span>Asset</span>
+    <span>Contextual Risk</span>
+  </div>
+
+  <hr class="asset-divider" />
+
+  <div class="asset-content">
+    <div *ngFor="let item of assetItems; let i = index" class="asset-item">
+      <div class="asset-info">
+        <div class="asset-icon-container">
+          <span class="icon-container-sm">
+            <img
+              src="assets/icons/server.png"
+              alt="Server Icon"
+              class="asset-icon"
+            />
+          </span>
+        </div>
+
+        <div class="asset-details">
+          <span class="asset-name">
+            {{ item.name }}
+          </span>
+          <span class="asset-ip">
+            {{ item.ipAddress }}
+          </span>
+        </div>
+      </div>
+
+      <div class="risk-badge" [ngClass]="item.riskLevel.toLowerCase()">
+        <span>
+          {{ item.riskLevel }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pagination-container" *ngIf="showPagination">
+    <div class="pagination-controls">
+      <button
+        mat-icon-button
+        [disabled]="currentPage === 1"
+        (click)="previousPage()"
+        class="pagination-button"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
+
+      <span class="pagination-text">
+        Showing {{ currentPage }}-{{ totalPages }} of {{ totalItems }}
+      </span>
+
+      <button
+        mat-icon-button
+        [disabled]="currentPage === totalPages"
+        (click)="nextPage()"
+        class="pagination-button"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
