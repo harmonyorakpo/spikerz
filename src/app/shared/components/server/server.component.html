@@ -1,19 +1,13 @@
-<div class="flex flex-col items-center justify-center">
-  <div class="relative mb-1">
+<div class="server-container">
+  <div class="server-icon-wrapper">
     <div
       *ngIf="showTopIcon"
-      class="{{
-        topIconColor
-      }} rounded-full w-6 h-6 flex items-center justify-center absolute -top-2 -right-2 z-10"
+      class="top-icon {{ topIconColor }}"
     >
-      <img class="w-4 h-4" [src]="topIcon" alt="top icon" />
+      <img [src]="topIcon" alt="top icon" />
     </div>
 
-    <span
-      class="{{
-        background
-      }} rounded-full w-12 h-12 flex items-center justify-center"
-    >
+    <span class="server-icon {{ background }}">
       <img
         class="w-{{ iconSize }} h-{{ iconSize }}"
         [src]="image"
@@ -22,8 +16,8 @@
     </span>
   </div>
 
-  <div class="flex flex-col items-center justify-center font-medium">
-    <span class="text-xs text-center">{{ serverName }}</span>
-    <span *ngIf="address" class="ip-address text-center">{{ address }}</span>
+  <div class="server-labels">
+    <span class="server-name">{{ serverName }}</span>
+    <span *ngIf="address" class="ip-address">{{ address }}</span>
   </div>
 </div>
