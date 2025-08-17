@@ -11,7 +11,7 @@ export class LoremIpsumCardsComponent {
    cardData = [
     {
       title: 'Lorem P',
-      icon: 'assets/icons/server.png',
+      icon: 'assets/icons/server.svg',
       serverType: 'Server',
       serverSubtype: 'Server',
       description: 'Lorem Ipsum Dolor Sit Amet Consectetur.',
@@ -20,7 +20,7 @@ export class LoremIpsumCardsComponent {
     },
     {
       title: 'Lorem S',
-      icon: 'assets/icons/server.png',
+      icon: 'assets/icons/server.svg',
       serverType: 'Server',
       serverSubtype: 'Server',
       description: 'Lorem Ipsum Dolor Sit Amet Consectetur.',
@@ -29,7 +29,7 @@ export class LoremIpsumCardsComponent {
     },
     {
       title: 'Lorem T',
-      icon: 'assets/icons/server.png',
+      icon: 'assets/icons/server.svg',
       serverType: 'Server',
       serverSubtype: 'Server',
       description: 'Lorem Ipsum Dolor Sit Amet Consectetur.',

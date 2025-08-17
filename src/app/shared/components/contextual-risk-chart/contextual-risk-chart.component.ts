@@ -18,14 +18,14 @@ export class ContextualRiskChartComponent {
       name: 'Loremipsumdolorsit',
       ipAddress: '192.168.1.1',
       riskLevel: 'Critical',
-      iconPath: 'assets/icons/server.png'
+      iconPath: 'assets/icons/server.svg'
     },
     {
       id: '2',
       name: 'Loremipsumdolorsit002',
       ipAddress: '192.168.1.2',
       riskLevel: 'Critical',
-      iconPath: 'assets/icons/server.png'
+      iconPath: 'assets/icons/server.svg'
     }
   ];
 
