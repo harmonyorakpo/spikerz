@@ -1,0 +1,19 @@
+.status-container {
+  @apply flex items-center justify-start mt-4 gap-6;
+}
+
+.status-item {
+  @apply flex items-center;
+}
+
+.status-icon {
+  @apply rounded-full p-2;
+  
+  img {
+    @apply w-4 h-4;
+  }
+}
+
+.status-label {
+  @apply font-bold pl-3;
+}

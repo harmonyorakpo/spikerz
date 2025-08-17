@@ -1,13 +1,12 @@
 <hr class="divider divider-bottom" />
-<div class="flex items-center justify-start mt-4 gap-6">
-  <div *ngFor="let item of statusItems" class="flex items-center">
-    <span class="rounded-full p-2" [ngClass]="item.backgroundColor">
+<div class="status-container">
+  <div *ngFor="let item of statusItems" class="status-item">
+    <span class="status-icon" [ngClass]="item.backgroundColor">
       <img
-        class="w-4 h-4"
         [src]="item.iconPath"
         [alt]="item.name + ' icon'"
       />
     </span>
-    <span class="font-bold pl-3" [ngClass]="item.textColor">{{ item.name }}</span>
+    <span class="status-label" [ngClass]="item.textColor">{{ item.name }}</span>
   </div>
 </div>

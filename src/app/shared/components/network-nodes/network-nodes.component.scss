@@ -1,0 +1,15 @@
+.network-container {
+  @apply bg-gray-50 rounded-lg px-6 py-4 flex flex-col;
+}
+
+.network-flow-wrapper {
+  @apply mx-auto p-3;
+}
+
+.network-main-flow {
+  @apply flex justify-start items-center;
+}
+
+.end-servers-container {
+  @apply flex flex-col justify-between h-48;
+}
