@@ -1,8 +1,7 @@
-<div class="bg-gray-50 rounded-lg px-6 py-4 flex flex-col ">
-  
-    <div class="flex justify-start items-center mb-3" >
-
-        <app-server
+<div class="bg-gray-50 rounded-lg px-6 py-4 flex flex-col">
+  <div class="mx-auto p-3">
+    <div class="flex justify-start items-center">
+      <app-server
         [serverName]="'Loremipsumm'"
         [background]="'bg-red-50'"
         [image]="'assets/network-nodes/venetian-mask.svg'"
@@ -11,23 +10,41 @@
         [topIconColor]="'bg-purple-600'"
         [topIcon]="'assets/network-nodes/users.svg'"
       ></app-server>
-    
+
       <span>
         <img src="assets/network-nodes/arrow.svg" alt="arrow" />
       </span>
-    
-      <app-server></app-server>
-    
+
+      <app-server [background]="'bg-blue-100'"></app-server>
+
       <span>
         <img src="assets/network-nodes/arrow.svg" alt="arrow" />
       </span>
-    
+
       <app-server></app-server>
-    
+
       <span>
         <img src="assets/network-nodes/double-arrow.svg" alt="double arrow" />
       </span>
-    </div>
 
-    <app-network-node-hero></app-network-node-hero>
+      <div class="flex flex-col justify-between h-48">
+        <span>
+          <app-server
+            [serverName]="'Loremipsumdolorsit'"
+            [address]="'192.168.1.1'"
+            [showTopIcon]="true"
+          ></app-server>
+        </span>
+        <span>
+          <app-server
+            [serverName]="'Loremipsumdolorsit'"
+            [address]="'192.168.1.2'"
+            [showTopIcon]="true"
+          ></app-server>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <app-network-node-hero></app-network-node-hero>
 </div>

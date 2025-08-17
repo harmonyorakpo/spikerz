@@ -13,7 +13,7 @@ export class ServerComponent {
   @Input() background: string = 'bg-blue-100';
   @Input() showTopIcon: boolean = false;
   @Input() topIcon: string = 'assets/network-nodes/shield.svg';
-  @Input() circleSize: string = '12';
   @Input() iconSize: string = '6';
   @Input() topIconColor: string = 'bg-red-600';
+  @Input() address!: string;
 }
