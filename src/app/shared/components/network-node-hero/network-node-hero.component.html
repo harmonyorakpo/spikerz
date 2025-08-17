@@ -1,12 +1,14 @@
 <hr class="divider divider-bottom" />
 <div class="status-container">
-  <div *ngFor="let item of statusItems" class="status-item">
-    <span class="status-icon" [ngClass]="item.backgroundColor">
-      <img
-        [src]="item.iconPath"
-        [alt]="item.name + ' icon'"
-      />
-    </span>
-    <span class="status-label" [ngClass]="item.textColor">{{ item.name }}</span>
-  </div>
+  @for (item of statusItems; track item.name) {
+    <div class="status-item">
+      <span class="status-icon" [ngClass]="item.backgroundColor">
+        <img
+          [src]="item.iconPath"
+          [alt]="item.name + ' icon'"
+        />
+      </span>
+      <span class="status-label" [ngClass]="item.textColor">{{ item.name }}</span>
+    </div>
+  }
 </div>

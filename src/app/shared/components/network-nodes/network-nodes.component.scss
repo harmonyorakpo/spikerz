@@ -1,15 +1,25 @@
 .network-container {
-  @apply bg-gray-50 rounded-lg px-6 py-4 flex flex-col;
+  @apply bg-gray-50 rounded-lg flex flex-col;
+  @apply px-3 py-3;
+  @apply md:px-4 md:py-4;
+  @apply lg:px-6;
 }
 
 .network-flow-wrapper {
-  @apply mx-auto p-3;
+  @apply mx-auto;
+  @apply p-2;
+  @apply md:p-3;
 }
 
 .network-main-flow {
-  @apply flex justify-start items-center;
+  @apply flex items-center;
+  @apply justify-start;
+  @apply md:justify-center;
 }
 
 .end-servers-container {
-  @apply flex flex-col justify-between h-48;
+  @apply flex flex-col justify-between;
+  @apply h-32;
+  @apply md:h-40;
+  @apply lg:h-48;
 }

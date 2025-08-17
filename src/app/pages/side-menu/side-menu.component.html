@@ -20,14 +20,12 @@
       [ngClass]="{ expanded: showSideMenu, collapsed: !showSideMenu }"
     >
       <div class="main-menu">
-        <ng-container *ngFor="let menuItem of menuItems; let i = index">
-          <ng-container
-            *ngIf="
-              menuItem.title !== 'Support' &&
-              menuItem.title !== 'Settings' &&
-              menuItem.title !== 'Profile'
-            "
-          >
+        @for (menuItem of menuItems; track menuItem.title; let i = $index) {
+          @if (
+            menuItem.title !== 'Support' &&
+            menuItem.title !== 'Settings' &&
+            menuItem.title !== 'Profile'
+          ) {
             <div
               class="menu-item"
               [ngClass]="{
@@ -41,28 +39,27 @@
                   alt="{{ menuItem.title }}"
                 />
               </div>
-              <span
-                *ngIf="showSideMenu"
-                class="menu-text"
-                [ngClass]="{
-                  active: menuItem.active || isActiveRoute(menuItem.path),
-                  inactive: !menuItem.active && !isActiveRoute(menuItem.path)
-                }"
-              >
-                {{ menuItem.title }}
-              </span>
+              @if (showSideMenu) {
+                <span
+                  class="menu-text"
+                  [ngClass]="{
+                    active: menuItem.active || isActiveRoute(menuItem.path),
+                    inactive: !menuItem.active && !isActiveRoute(menuItem.path)
+                  }"
+                >
+                  {{ menuItem.title }}
+                </span>
+              }
             </div>
-          </ng-container>
-        </ng-container>
+          }
+        }
       </div>
 
       <div class="secondary-menu">
-        <ng-container *ngFor="let menuItem of menuItems">
-          <ng-container
-            *ngIf="
-              menuItem.title === 'Support' || menuItem.title === 'Settings'
-            "
-          >
+        @for (menuItem of menuItems; track menuItem.title) {
+          @if (
+            menuItem.title === 'Support' || menuItem.title === 'Settings'
+          ) {
             <div
               class="secondary-menu-item"
               [ngClass]="{
@@ -76,19 +73,20 @@
                   alt="{{ menuItem.title }}"
                 />
               </div>
-              <span
-                *ngIf="showSideMenu"
-                class="menu-text"
-                [ngClass]="{
-                  active: menuItem.active || isActiveRoute(menuItem.path),
-                  inactive: !menuItem.active && !isActiveRoute(menuItem.path)
-                }"
-              >
-                {{ menuItem.title }}
-              </span>
+              @if (showSideMenu) {
+                <span
+                  class="menu-text"
+                  [ngClass]="{
+                    active: menuItem.active || isActiveRoute(menuItem.path),
+                    inactive: !menuItem.active && !isActiveRoute(menuItem.path)
+                  }"
+                >
+                  {{ menuItem.title }}
+                </span>
+              }
             </div>
-          </ng-container>
-        </ng-container>
+          }
+        }
       </div>
 
       <div class="user-profile">
@@ -97,19 +95,22 @@
             <img src="assets/menu-icons/profile.png" alt="User Avatar" />
           </span>
         </div>
-        <div *ngIf="showSideMenu" class="user-info">
-          <div class="user-name">
-            <p>Hello Harmony</p>
+        @if (showSideMenu) {
+          <div class="user-info">
+            <div class="user-name">
+              <p>Hello Harmony</p>
+            </div>
+            <p class="user-email">user&#64;spike.com</p>
           </div>
-          <p class="user-email">user&#64;spike.com</p>
-        </div>
-        <img
-          *ngIf="showSideMenu"
-          class="logout-btn"
-          src="assets/menu-icons/logout.svg"
-          alt="logout icon"
-          (click)="logout()"
-        />
+        }
+        @if (showSideMenu) {
+          <img
+            class="logout-btn"
+            src="assets/menu-icons/logout.svg"
+            alt="logout icon"
+            (click)="logout()"
+          />
+        }
       </div>
     </div>
   </div>

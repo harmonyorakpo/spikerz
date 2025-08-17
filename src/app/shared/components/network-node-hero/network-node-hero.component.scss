@@ -1,5 +1,8 @@
 .status-container {
-  @apply flex items-center justify-start mt-4 gap-6;
+  @apply flex items-center justify-start mt-2;
+  @apply gap-3;
+  @apply md:mt-3 md:gap-4;
+  @apply lg:mt-4 lg:gap-6;
 }
 
 .status-item {
@@ -7,13 +10,21 @@
 }
 
 .status-icon {
-  @apply rounded-full p-2;
+  @apply rounded-full;
+  @apply p-1;
+  @apply md:p-1.5;
+  @apply lg:p-2;
   
   img {
-    @apply w-4 h-4;
+    @apply w-3 h-3;
+    @apply md:w-3.5 md:h-3.5;
+    @apply lg:w-4 lg:h-4;
   }
 }
 
 .status-label {
-  @apply font-bold pl-3;
+  @apply font-bold;
+  @apply pl-2 text-xs;
+  @apply md:pl-2.5 md:text-sm;
+  @apply lg:pl-3 lg:text-base;
 }
