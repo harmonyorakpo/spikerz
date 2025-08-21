@@ -1,0 +1,110 @@
+ .card-section:not(:last-child) {
+      @apply border-b border-gray-100 pb-4;
+    }
+
+    .card-container {
+      @apply bg-white rounded-xl shadow-lg border border-gray-100 p-6 transition-all duration-200 hover:shadow-xl;
+    }
+
+    .card-header {
+      @apply flex items-start justify-between mb-4;
+    }
+
+    .header-left {
+      @apply flex items-start gap-3;
+    }
+
+    .icon-container {
+      @apply w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0;
+    }
+
+    .header-text {
+      @apply flex-1;
+    }
+
+    .card-title {
+      @apply text-gray-800 font-medium text-base leading-tight;
+    }
+
+    .card-subtitle {
+      @apply text-gray-500 text-sm mt-1;
+    }
+
+    .card-content {
+      @apply space-y-3;
+    }
+
+    .content-item {
+      @apply flex flex-col;
+    }
+
+    .content-label {
+      @apply text-gray-600 text-sm font-medium mb-1;
+    }
+
+    .grid-container {
+      @apply grid gap-2;
+    }
+
+    .key-value-container {
+      @apply space-y-2;
+    }
+
+    .key-value-item {
+      @apply flex flex-wrap items-center gap-2;
+    }
+
+    .key {
+      @apply text-gray-600 text-sm;
+    }
+
+    .value {
+      @apply text-sm font-medium;
+    }
+
+    .list-container {
+      @apply flex flex-wrap gap-2;
+    }
+
+    .list-item {
+      @apply inline-block;
+    }
+
+    .badge-container {
+      @apply flex flex-wrap gap-2;
+    }
+
+    .badge {
+      @apply px-2 py-1 rounded-md text-xs font-medium;
+    }
+
+    .card-actions {
+      @apply flex gap-2 mt-4 pt-4 border-t border-gray-100;
+    }
+
+    .action-button {
+      @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+    }
+
+    /* Color utilities */
+    .text-primary { @apply text-blue-600; }
+    .text-secondary { @apply text-gray-600; }
+    .text-accent { @apply text-purple-600; }
+    .text-warning { @apply text-orange-600; }
+    .text-error { @apply text-red-600; }
+    .text-success { @apply text-green-600; }
+
+    .bg-primary { @apply bg-blue-100; }
+    .bg-secondary { @apply bg-gray-100; }
+    .bg-accent { @apply bg-purple-100; }
+    .bg-warning { @apply bg-orange-100; }
+    .bg-error { @apply bg-red-100; }
+    .bg-success { @apply bg-green-100; }
+
+    .icon-primary { @apply text-blue-600; }
+    .icon-secondary { @apply text-gray-600; }
+    .icon-accent { @apply text-purple-600; }
+    .icon-warning { @apply text-orange-600; }
+    .icon-error { @apply text-red-600; }
+    .icon-success { @apply text-green-600; }
+  
