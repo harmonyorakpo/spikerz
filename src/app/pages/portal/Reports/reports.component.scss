@@ -4,12 +4,12 @@
 
 .sub-card {
   @apply md:col-span-2 card flex flex-col w-full gap-y-6;
-  @apply mb-8 overflow-hidden;
+  @apply mb-8;
 }
 
 .card {
   @apply bg-white rounded-2xl shadow-md px-6 pt-6;
-  @apply md:h-screen md:overflow-y-auto md:sticky md:top-0;
+  @apply lg:h-screen lg:overflow-y-auto lg:sticky lg:top-0;
   @apply pb-6;
   
   scrollbar-width: none;
