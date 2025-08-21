@@ -6,10 +6,9 @@
 }
 
 .asset-header {
-  @apply flex justify-between font-medium text-gray-500;
-  @apply text-xs mb-4;
-  @apply md:text-sm md:mb-5;
-  @apply lg:mb-6;
+  @apply flex justify-between font-medium text-gray-400;
+  @apply text-xs mb-3;
+  @apply md:text-sm md:mb-4;
 }
 
 .asset-divider {

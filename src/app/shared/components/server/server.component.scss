@@ -23,10 +23,10 @@
 }
 
 .server-name {
-  @apply text-xs text-center;
+  @apply text-xs text-center text-gray-600 font-medium;
 }
 
 .ip-address {
   font-size: 8px;
-  @apply text-center;
+  @apply text-center text-gray-500 font-medium;
 }
