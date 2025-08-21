@@ -1,15 +1,15 @@
 .report {
-  @apply grid md:grid-cols-3 px-8 gap-x-6 mb-3;
+  @apply grid md:grid-cols-3 px-8 gap-x-6;
 }
 
 .sub-card {
   @apply md:col-span-2 card flex flex-col w-full gap-y-6;
-  @apply mb-8;
+  @apply mb-8 overflow-hidden;
 }
 
 .card {
   @apply bg-white rounded-2xl shadow-md px-6 pt-6;
-  @apply h-screen overflow-y-auto sticky top-0;
+  @apply md:h-screen md:overflow-y-auto md:sticky md:top-0;
   @apply pb-6;
   
   scrollbar-width: none;
