@@ -17,20 +17,23 @@ import { NetworkModalComponent } from '../network-modal/network-modal.component'
 })
 export class NetworkNodesComponent {
   hoveredServerName: string = '';
+  hoveredAddress: string = '';
   private hideTimeout: any;
 
-  onServerHover(serverName: string) {
+  onServerHover(data: {serverName: string, address: string}) {
     if (this.hideTimeout) {
       clearTimeout(this.hideTimeout);
       this.hideTimeout = null;
     }
 
-    this.hoveredServerName = serverName;
+    this.hoveredServerName = data.serverName;
+    this.hoveredAddress = data.address;
   }
 
   onServerLeave() {
     this.hideTimeout = setTimeout(() => {
       this.hoveredServerName = '';
+      this.hoveredAddress = '';
     }, 100);
   }
 

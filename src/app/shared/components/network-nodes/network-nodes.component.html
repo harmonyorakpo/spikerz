@@ -59,7 +59,10 @@
       </div>
 
       <div class="absolute z-50 pointer-events-none">
-        <app-network-modal [item]="hoveredServerName"></app-network-modal>
+        <app-network-modal
+          [item]="hoveredServerName"
+          [address]="hoveredAddress"
+        ></app-network-modal>
       </div>
     </div>
   </div>

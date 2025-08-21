@@ -10,6 +10,7 @@ import { Component, Input } from '@angular/core';
 export class NetworkModalComponent {
   @Input() backgroundType!: string;
   @Input() item!: string;
+  @Input() address!: string;
 
   ipAddresses: string[] = [
     '1.2.3.4',

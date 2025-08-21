@@ -15,15 +15,16 @@ export class ServerComponent {
   @Input() topIcon: string = 'assets/network-nodes/shield.svg';
   @Input() iconSize: string = '6';
   @Input() topIconColor: string = 'bg-red-600';
-  @Input() address!: string;
+  @Input() address: string = '';
 
-  @Output() serverHover = new EventEmitter<string>();
+  @Output() serverHover = new EventEmitter<{serverName: string, address: string}>();
   @Output() serverLeave = new EventEmitter<void>();
 
   onMouseEnter() {
-    if (this.serverName) {
-      this.serverHover.emit(this.serverName);
-    }
+    this.serverHover.emit({
+      serverName: this.serverName,
+      address: this.address || ''
+    });
   }
 
   onMouseLeave() {
