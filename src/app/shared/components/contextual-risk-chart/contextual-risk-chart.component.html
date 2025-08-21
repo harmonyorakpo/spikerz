@@ -1,69 +1,69 @@
 <div class="asset-card">
   <div class="asset-header">
-    <span>Asset</span>
+    <span  >Asset</span>
     <span>Contextual Risk</span>
   </div>
 
   <hr class="asset-divider" />
 
   <div class="asset-content">
-    @for (item of assetItems; track item.id || $index; let i = $index) {
-      <div class="asset-item">
-        <div class="asset-info">
-          <div class="asset-icon-container">
-            <span class="icon-container-sm">
-              <img
-                src="assets/icons/server.svg"
-                alt="Server Icon"
-                class="asset-icon"
-              />
-            </span>
-          </div>
-
-          <div class="asset-details">
-            <span class="asset-name">
-              {{ item.name }}
-            </span>
-            <span class="asset-ip">
-              {{ item.ipAddress }}
-            </span>
-          </div>
+    @for (item of displayedItems; track item.id || $index; let i = $index) {
+    <div class="asset-item">
+      <div class="asset-info">
+        <div class="asset-icon-container">
+          <span class="icon-container-sm">
+            <img
+              src="assets/icons/server.svg"
+              alt="Server Icon"
+              class="asset-icon"
+            />
+          </span>
         </div>
 
-        <div class="risk-badge" [ngClass]="item.riskLevel.toLowerCase()">
-          <span>
-            {{ item.riskLevel }}
+        <div class="asset-details">
+          <span class="asset-name">
+            {{ item.name }}
+          </span>
+          <span class="asset-ip">
+            {{ item.ipAddress }}
           </span>
         </div>
       </div>
+
+      <div class="risk-badge" [ngClass]="item.riskLevel.toLowerCase()">
+        <span>
+          {{ item.riskLevel }}
+        </span>
+      </div>
+    </div>
     }
   </div>
 
-  @if (showPagination) {
-    <div class="pagination-container">
-      <div class="pagination-controls">
-        <button
-          mat-icon-button
-          [disabled]="currentPage === 1"
-          (click)="previousPage()"
-          class="pagination-button"
-        >
-          <mat-icon>chevron_left</mat-icon>
-        </button>
+  @if (showPagination && totalItems > pageSize) {
+  <div class="pagination-container">
+    <div class="pagination-controls">
+      <button
+        mat-icon-button
+        [disabled]="currentPage === 1"
+        (click)="previousPage()"
+        class="pagination-button"
+      >
+        <mat-icon>chevron_left</mat-icon>
+      </button>
 
-        <span class="pagination-text">
-          Showing {{ currentPage }}-{{ totalPages }} of {{ totalItems }}
-        </span>
+      <span class="pagination-text">
+        {{ getPaginationRange() }}
+      </span>
 
-        <button
-          mat-icon-button
-          [disabled]="currentPage === totalPages"
-          (click)="nextPage()"
-          class="pagination-button"
-        >
-          <mat-icon>chevron_right</mat-icon>
-        </button>
-      </div>
+      <button
+        mat-icon-button
+        [disabled]="currentPage === totalPages"
+        (click)="nextPage()"
+        class="pagination-button"
+      >
+        <mat-icon>chevron_right</mat-icon>
+      </button>
     </div>
+  </div>
   }
 </div>

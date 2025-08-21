@@ -51,7 +51,7 @@
 }
 
 .asset-name {
-  @apply font-semibold text-gray-900 truncate;
+  @apply font-semibold text-gray-600 truncate;
   @apply text-xs;
   @apply md:text-sm;
 }
@@ -59,8 +59,7 @@
 .asset-ip {
   @apply text-gray-500;
   @apply text-xs;
-  @apply md:text-sm;
-  @apply lg:text-xs;
+
 }
 
 .risk-badge {
