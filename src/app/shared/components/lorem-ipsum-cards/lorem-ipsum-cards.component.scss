@@ -5,9 +5,10 @@
 }
 
 .main-title {
-  @apply font-bold;
-  @apply text-lg;
-  @apply md:text-xl;
+  @apply font-bold text-slate-700;
+  @apply text-base;
+  
+  
  
 }
 
@@ -18,9 +19,9 @@
 }
 
 .card-title {
-  @apply font-semibold text-gray-800;
+  @apply font-bold text-slate-600;
   @apply text-sm mb-2;
-  @apply md:text-base md:mb-3;
+  @apply  md:mb-3;
 }
 
 .card-content {
@@ -61,9 +62,9 @@
 }
 
 .description {
-  @apply text-gray-700 flex-1 text-left;
-  @apply text-xs;
-  @apply md:text-sm;
+  @apply text-gray-800 flex-1 text-left;
+  @apply text-sm;
+
 }
 
 .card-details-container {
