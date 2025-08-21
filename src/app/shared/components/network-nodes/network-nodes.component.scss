@@ -23,3 +23,11 @@
   @apply md:h-40;
   @apply lg:h-48;
 }
+
+.arrow-image {
+  @apply w-16 md:w-12;
+}
+
+.double-arrow-image {
+  @apply w-52 md:w-36;
+}
