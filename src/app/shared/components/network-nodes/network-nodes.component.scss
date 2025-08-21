@@ -25,9 +25,9 @@
 }
 
 .arrow-image {
-  @apply w-16 md:w-12;
+  @apply w-16 md:w-6 xl:w-16;
 }
 
 .double-arrow-image {
-  @apply w-52 md:w-36;
+  @apply w-52 md:w-16 lg:w-52;
 }
