@@ -1,68 +1,58 @@
 @if(item === 'Loremipsumm'){
-<div
-  class="bg-white rounded-2xl shadow-md py-3 px-6 w-fit max-w-lg mt-56 -ml-96"
->
-  <div class="space-y-3">
-    <div class="bg-red-50 rounded-md px-2 py-1 w-52">
-      <h3 class="text-red-500 text-sm font-semibold">Lorem Ipsum Dolor Sit</h3>
+<div class="modal-card-left">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title">Lorem Ipsum Dolor Sit</h3>
     </div>
 
-    <div class="pl-16">
-      <div class="grid grid-cols-3 gap-1">
+    <div class="ip-grid-container">
+      <div class="ip-grid">
         @for (ip of ipAddresses; track $index) {
-        <div class="bg-red-50 rounded-md p-1" [class.w-24]="$index === 0">
-          <span class="text-red-500 text-xs font-semibold">{{ ip }}</span>
+        <div class="ip-item" [class.ip-item-first]="$index === 0">
+          <span class="ip-text">{{ ip }}</span>
         </div>
         }
       </div>
     </div>
 
-    <div class="bg-purple-50 rounded-md p-1 pt-auto w-fit">
-      <span class="text-purple-500 text-xs font-semibold">Lorem: 1.2.3.4</span>
+    <div class="footer-item">
+      <span class="footer-text">Lorem: 1.2.3.4</span>
     </div>
   </div>
 </div>
 
 } @if(item === 'Loremipsu'){
 
-<div
-  class="bg-white rounded-2xl shadow-md py-3 px-6 w-fit max-w-lg mt-56 -ml-6"
->
-  <div class="flex flex-col gap-y-2">
-    <div class="flex flex-row gap-x-2 items-center">
+<div class="modal-card-center">
+  <div class="modal-content-flex">
+    <div class="header-row">
       <span class="icon-container-xs">
-        <img src="assets/icons/server.svg" alt="Server Icon" class="w-4 h-4" />
+        <img src="assets/icons/server.svg" alt="Server Icon" class="icon-sm" />
       </span>
-      <span class="text-sm font-semibold text-gray-600">
+      <span class="server-name">
         {{ item }}
       </span>
     </div>
 
-    <div class="flex pr-3 items-start">
-      <span class="pr-1 mt-1">
-        <img class="w-4 h-4" src="assets/icons/list.svg" alt="list" />
+    <div class="content-row">
+      <span class="list-icon">
+        <img class="icon-sm" src="assets/icons/list.svg" alt="list" />
       </span>
 
-      <div
-        class="flex flex-wrap items-center gap-1 font-bold text-gray-600 text-sm"
-      >
+      <div class="content-wrapper">
         <span>Lorem: Loremipsum Loremipsum</span>
 
         @for (ip of ips; track $index) {
-        <div
-          class="bg-purple-50 rounded-md px-1 py-0.5 inline-flex items-center"
-        >
-          <span class="text-purple-500 text-xs">{{ ip }}</span>
+        <div class="ip-badge">
+          <span class="ip-badge-text">{{ ip }}</span>
         </div>
         }
 
         <span>Loremipsum</span>
 
         @for (ip of ips; track $index) {
-        <div
-          class="bg-purple-50 rounded-md px-1 py-0.5 inline-flex items-center"
-        >
-          <span class="text-purple-500 text-xs">{{ ip }}</span>
+        <div class="ip-badge">
+          <span class="ip-badge-text">{{ ip }}</span>
         </div>
         }
       </div>
@@ -70,59 +60,45 @@
   </div>
 </div>
 
-} @if(item === 'Loremipsummdolorsit'){
-<div
-  class="bg-white rounded-2xl shadow-md py-3 px-6 w-fit max-w-lg mt-56 ml-96"
->
-  <div class="flex flex-col gap-y-2 w-64">
-    <div class="flex flex-row gap-x-4 items-center">
-      <div class="relative">
+} @if(item === 'Loremipsumdolorsit'){
+<div class="modal-card-right">
+  <div class="modal-content-detailed">
+    <div class="detailed-header">
+      <div class="icon-with-badge">
         <span class="icon-container-xs">
-          <img
-            src="assets/icons/server.svg"
-            alt="Server Icon"
-            class="w-4 h-4"
-          />
+          <img src="assets/icons/server.svg" alt="Server Icon" class="icon-sm" />
         </span>
 
-        <div
-          class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
-        >
+        <div class="notification-badge">
           <span>
-            <img
-              class="w-3 h-3"
-              src="assets/network-nodes/thick-shield.svg"
-              alt="shield"
-            />
+            <img class="badge-icon" src="assets/network-nodes/thick-shield.svg" alt="shield" />
           </span>
         </div>
       </div>
-      <div class="flex flex-col">
-        <span class="text-sm font-semibold text-gray-600">
+      <div class="server-info">
+        <span class="server-name">
           {{ item }}
         </span>
-        <span class="text-xs text-gray-400"> 192.168.1.2 </span>
+        <span class="server-address">192.168.1.2</span>
       </div>
     </div>
 
-    <div class="flex pr-3 items-start">
-      <span class="mt-1.5 w-8 h-8">
-        <img class="w-4 h-4" src="assets/icons/list.svg" alt="list" />
+    <div class="detailed-content">
+      <span class="list-icon-large">
+        <img class="icon-sm" src="assets/icons/list.svg" alt="list" />
       </span>
 
-      <div
-        class="flex flex-wrap items-center gap-1 font-bold text-gray-600 text-sm"
-      >
+      <div class="content-wrapper">
         <span>Lorem:</span>
 
-        <div class="bg-yellow-50 rounded-md p-1">
-          <span class="text-yellow-500 font-bold"> Lorem "Ipsum" </span>
+        <div class="highlight-badge-yellow">
+          <span class="highlight-text-yellow">Lorem "Ipsum"</span>
         </div>
 
         <span>Loremipsum</span>
 
-        <div class="bg-blue-50 rounded-md p-1">
-          <span class="text-blue-500 font-bold text-sm"> Lorem 1234,5678 </span>
+        <div class="highlight-badge-blue">
+          <span class="highlight-text-blue">Lorem 1234,5678</span>
         </div>
       </div>
     </div>

@@ -1,110 +1,139 @@
- .card-section:not(:last-child) {
-      @apply border-b border-gray-100 pb-4;
-    }
+.modal-card-left {
+  @apply bg-white rounded-2xl shadow-md py-3 px-6 w-fit max-w-lg mt-56 -ml-96;
+}
 
-    .card-container {
-      @apply bg-white rounded-xl shadow-lg border border-gray-100 p-6 transition-all duration-200 hover:shadow-xl;
-    }
+.modal-card-center {
+  @apply bg-white rounded-2xl shadow-md py-3 px-6 w-fit max-w-lg mt-56 -ml-6;
+}
 
-    .card-header {
-      @apply flex items-start justify-between mb-4;
-    }
+.modal-card-right {
+  @apply bg-white rounded-2xl shadow-md py-3 px-6 w-fit max-w-lg mt-56 ml-96;
+}
 
-    .header-left {
-      @apply flex items-start gap-3;
-    }
+.modal-content {
+  @apply space-y-3;
+}
 
-    .icon-container {
-      @apply w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0;
-    }
+.modal-content-flex {
+  @apply flex flex-col gap-y-2;
+}
 
-    .header-text {
-      @apply flex-1;
-    }
+.modal-content-detailed {
+  @apply flex flex-col gap-y-2 w-64;
+}
 
-    .card-title {
-      @apply text-gray-800 font-medium text-base leading-tight;
-    }
+.modal-header {
+  @apply bg-red-50 rounded-md px-2 py-1 w-52;
+}
 
-    .card-subtitle {
-      @apply text-gray-500 text-sm mt-1;
-    }
+.modal-title {
+  @apply text-red-500 text-sm font-semibold;
+}
 
-    .card-content {
-      @apply space-y-3;
-    }
+.ip-grid-container {
+  @apply pl-16;
+}
 
-    .content-item {
-      @apply flex flex-col;
-    }
+.ip-grid {
+  @apply grid grid-cols-3 gap-1;
+}
 
-    .content-label {
-      @apply text-gray-600 text-sm font-medium mb-1;
-    }
+.ip-item {
+  @apply bg-red-50 rounded-md p-1;
+}
 
-    .grid-container {
-      @apply grid gap-2;
-    }
+.ip-item-first {
+  @apply w-24;
+}
 
-    .key-value-container {
-      @apply space-y-2;
-    }
+.ip-text {
+  @apply text-red-500 text-xs font-semibold;
+}
 
-    .key-value-item {
-      @apply flex flex-wrap items-center gap-2;
-    }
+.footer-item {
+  @apply bg-purple-50 rounded-md p-1 w-fit;
+}
 
-    .key {
-      @apply text-gray-600 text-sm;
-    }
+.footer-text {
+  @apply text-purple-500 text-xs font-semibold;
+}
 
-    .value {
-      @apply text-sm font-medium;
-    }
+.header-row {
+  @apply flex flex-row gap-x-2 items-center;
+}
 
-    .list-container {
-      @apply flex flex-wrap gap-2;
-    }
+.detailed-header {
+  @apply flex flex-row gap-x-4 items-center;
+}
 
-    .list-item {
-      @apply inline-block;
-    }
+.content-row {
+  @apply flex pr-3 items-start;
+}
 
-    .badge-container {
-      @apply flex flex-wrap gap-2;
-    }
+.detailed-content {
+  @apply flex pr-3 items-start;
+}
 
-    .badge {
-      @apply px-2 py-1 rounded-md text-xs font-medium;
-    }
+.list-icon {
+  @apply pr-1 mt-1;
+}
 
-    .card-actions {
-      @apply flex gap-2 mt-4 pt-4 border-t border-gray-100;
-    }
+.list-icon-large {
+  @apply mt-1.5 w-8 h-8;
+}
 
-    .action-button {
-      @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
-    }
+.icon-sm {
+  @apply w-4 h-4;
+}
 
-    /* Color utilities */
-    .text-primary { @apply text-blue-600; }
-    .text-secondary { @apply text-gray-600; }
-    .text-accent { @apply text-purple-600; }
-    .text-warning { @apply text-orange-600; }
-    .text-error { @apply text-red-600; }
-    .text-success { @apply text-green-600; }
+.badge-icon {
+  @apply w-3 h-3;
+}
 
-    .bg-primary { @apply bg-blue-100; }
-    .bg-secondary { @apply bg-gray-100; }
-    .bg-accent { @apply bg-purple-100; }
-    .bg-warning { @apply bg-orange-100; }
-    .bg-error { @apply bg-red-100; }
-    .bg-success { @apply bg-green-100; }
+.server-name {
+  @apply text-sm font-semibold text-gray-600;
+}
 
-    .icon-primary { @apply text-blue-600; }
-    .icon-secondary { @apply text-gray-600; }
-    .icon-accent { @apply text-purple-600; }
-    .icon-warning { @apply text-orange-600; }
-    .icon-error { @apply text-red-600; }
-    .icon-success { @apply text-green-600; }
-  
+.server-address {
+  @apply text-xs text-gray-400;
+}
+
+.server-info {
+  @apply flex flex-col;
+}
+
+.content-wrapper {
+  @apply flex flex-wrap items-center gap-1 font-bold text-gray-600 text-sm;
+}
+
+.ip-badge {
+  @apply bg-purple-50 rounded-md px-1 py-0.5 inline-flex items-center;
+}
+
+.ip-badge-text {
+  @apply text-purple-500 text-xs;
+}
+
+.icon-with-badge {
+  @apply relative;
+}
+
+.notification-badge {
+  @apply absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center;
+}
+
+.highlight-badge-yellow {
+  @apply bg-yellow-50 rounded-md p-1;
+}
+
+.highlight-text-yellow {
+  @apply text-yellow-500 font-bold;
+}
+
+.highlight-badge-blue {
+  @apply bg-blue-50 rounded-md p-1;
+}
+
+.highlight-text-blue {
+  @apply text-blue-500 font-bold text-sm;
+}

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -16,4 +16,17 @@ export class ServerComponent {
   @Input() iconSize: string = '6';
   @Input() topIconColor: string = 'bg-red-600';
   @Input() address!: string;
+
+  @Output() serverHover = new EventEmitter<string>();
+  @Output() serverLeave = new EventEmitter<void>();
+
+  onMouseEnter() {
+    if (this.serverName) {
+      this.serverHover.emit(this.serverName);
+    }
+  }
+
+  onMouseLeave() {
+    this.serverLeave.emit();
+  }
 }

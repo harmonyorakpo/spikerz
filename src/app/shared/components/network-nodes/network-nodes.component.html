@@ -9,6 +9,8 @@
         [showTopIcon]="true"
         [topIconColor]="'bg-purple-600'"
         [topIcon]="'assets/network-nodes/users.svg'"
+        (serverHover)="onServerHover($event)"
+        (serverLeave)="onServerLeave()"
       ></app-server>
 
       <span class="arrow-image">
@@ -18,15 +20,20 @@
       <app-server
         [serverName]="'Loremipsu'"
         [background]="'bg-blue-100'"
+        (serverHover)="onServerHover($event)"
+        (serverLeave)="onServerLeave()"
       ></app-server>
 
       <span class="arrow-image">
         <img src="assets/network-nodes/arrow.svg" alt="arrow" />
       </span>
 
-      <app-server></app-server>
+      <app-server
+        (serverHover)="onServerHover($event)"
+        (serverLeave)="onServerLeave()"
+      ></app-server>
 
-      <span class="double-arrow-image" >
+      <span class="double-arrow-image">
         <img src="assets/network-nodes/double-arrow.svg" alt="double arrow" />
       </span>
 
@@ -36,6 +43,8 @@
             [serverName]="'Loremipsumdolorsit'"
             [address]="'192.168.1.1'"
             [showTopIcon]="true"
+            (serverHover)="onServerHover($event)"
+            (serverLeave)="onServerLeave()"
           ></app-server>
         </span>
         <span>
@@ -43,12 +52,14 @@
             [serverName]="'Loremipsumdolorsit'"
             [address]="'192.168.1.2'"
             [showTopIcon]="true"
+            (serverHover)="onServerHover($event)"
+            (serverLeave)="onServerLeave()"
           ></app-server>
         </span>
       </div>
 
-      <div class="absolute z-50">
-        <app-network-modal [item]="'Loremipsumm'"></app-network-modal>
+      <div class="absolute z-50 pointer-events-none">
+        <app-network-modal [item]="hoveredServerName"></app-network-modal>
       </div>
     </div>
   </div>

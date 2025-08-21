@@ -1,24 +1,33 @@
-<div class="server-container">
-  <div class="server-icon-wrapper">
-    @if (showTopIcon) {
-      <div class="top-icon {{ topIconColor }}">
-        <img [src]="topIcon" alt="top icon" />
-      </div>
-    }
+<div
 
-    <span class="server-icon {{ background }}">
-      <img
-        class="w-{{ iconSize }} h-{{ iconSize }}"
-        [src]="image"
-        alt="server icon"
-      />
-    </span>
-  </div>
+  class="server-container" 
+  (mouseenter)="onMouseEnter()" 
+  (mouseleave)="onMouseLeave()"
+>
 
-  <div class="server-labels">
-    <span class="server-name">{{ serverName }}</span>
-    @if (address) {
-      <span class="ip-address">{{ address }}</span>
-    }
+
+  <div class="server-container">
+    <div class="server-icon-wrapper">
+      @if (showTopIcon) {
+        <div class="top-icon {{ topIconColor }}">
+          <img [src]="topIcon" alt="top icon" />
+        </div>
+      }
+  
+      <span class="server-icon {{ background }}">
+        <img
+          class="w-{{ iconSize }} h-{{ iconSize }}"
+          [src]="image"
+          alt="server icon"
+        />
+      </span>
+    </div>
+  
+    <div class="server-labels">
+      <span class="server-name">{{ serverName }}</span>
+      @if (address) {
+        <span class="ip-address">{{ address }}</span>
+      }
+    </div>
   </div>
 </div>
