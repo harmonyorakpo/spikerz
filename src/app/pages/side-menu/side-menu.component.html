@@ -19,74 +19,73 @@
       class="sidebar-content"
       [ngClass]="{ expanded: showSideMenu, collapsed: !showSideMenu }"
     >
+      @if (!showSideMenu) {
+      <div class="logo-container">
+        <img src="assets/menu-icons/logo.svg" alt="Logo" />
+      </div>
+      }
+
       <div class="main-menu">
-        @for (menuItem of menuItems; track menuItem.title; let i = $index) {
-          @if (
-            menuItem.title !== 'Support' &&
-            menuItem.title !== 'Settings' &&
-            menuItem.title !== 'Profile'
-          ) {
-            <div
-              class="menu-item"
-              [ngClass]="{
-                active: menuItem.active || isActiveRoute(menuItem.path)
-              }"
-              (click)="navigateToRoute(menuItem.path)"
-            >
-              <div class="menu-icon">
-                <img
-                  [src]="'assets/menu-icons/' + menuItem.icon"
-                  alt="{{ menuItem.title }}"
-                />
-              </div>
-              @if (showSideMenu) {
-                <span
-                  class="menu-text"
-                  [ngClass]="{
-                    active: menuItem.active || isActiveRoute(menuItem.path),
-                    inactive: !menuItem.active && !isActiveRoute(menuItem.path)
-                  }"
-                >
-                  {{ menuItem.title }}
-                </span>
-              }
-            </div>
+        @for (menuItem of menuItems; track menuItem.title; let i = $index) { @if
+        ( menuItem.title !== 'Support' && menuItem.title !== 'Settings' &&
+        menuItem.title !== 'Profile' ) {
+        <div
+          class="menu-item"
+          [ngClass]="{
+            active: menuItem.active || isActiveRoute(menuItem.path)
+          }"
+          (click)="navigateToRoute(menuItem.path)"
+        >
+          <div class="menu-icon">
+            <img
+              [src]="'assets/menu-icons/' + menuItem.icon"
+              alt="{{ menuItem.title }}"
+            />
+          </div>
+          @if (showSideMenu) {
+          <span
+            class="menu-text"
+            [ngClass]="{
+              active: menuItem.active || isActiveRoute(menuItem.path),
+              inactive: !menuItem.active && !isActiveRoute(menuItem.path)
+            }"
+          >
+            {{ menuItem.title }}
+          </span>
           }
-        }
+        </div>
+        } }
       </div>
 
       <div class="secondary-menu">
-        @for (menuItem of menuItems; track menuItem.title) {
-          @if (
-            menuItem.title === 'Support' || menuItem.title === 'Settings'
-          ) {
-            <div
-              class="secondary-menu-item"
-              [ngClass]="{
-                active: menuItem.active || isActiveRoute(menuItem.path)
-              }"
-              (click)="navigateToRoute(menuItem.path)"
-            >
-              <div class="menu-icon">
-                <img
-                  [src]="'assets/menu-icons/' + menuItem.icon"
-                  alt="{{ menuItem.title }}"
-                />
-              </div>
-              @if (showSideMenu) {
-                <span
-                  class="menu-text"
-                  [ngClass]="{
-                    active: menuItem.active || isActiveRoute(menuItem.path),
-                    inactive: !menuItem.active && !isActiveRoute(menuItem.path)
-                  }"
-                >
-                  {{ menuItem.title }}
-                </span>
-              }
-            </div>
+        @for (menuItem of menuItems; track menuItem.title) { @if (
+        menuItem.title === 'Support' || menuItem.title === 'Settings' ) {
+        <div
+          class="secondary-menu-item"
+          [ngClass]="{
+            active: menuItem.active || isActiveRoute(menuItem.path)
+          }"
+          (click)="navigateToRoute(menuItem.path)"
+        >
+          <div class="menu-icon">
+            <img
+              [src]="'assets/menu-icons/' + menuItem.icon"
+              alt="{{ menuItem.title }}"
+            />
+          </div>
+          @if (showSideMenu) {
+          <span
+            class="menu-text"
+            [ngClass]="{
+              active: menuItem.active || isActiveRoute(menuItem.path),
+              inactive: !menuItem.active && !isActiveRoute(menuItem.path)
+            }"
+          >
+            {{ menuItem.title }}
+          </span>
           }
-        }
+        </div>
+        } }
       </div>
 
       <div class="user-profile">
@@ -96,20 +95,19 @@
           </span>
         </div>
         @if (showSideMenu) {
-          <div class="user-info">
-            <div class="user-name">
-              <p>Hello Harmony</p>
-            </div>
-            <p class="user-email">user&#64;spike.com</p>
+        <div class="user-info">
+          <div class="user-name">
+            <p>Hello Harmony</p>
           </div>
-        }
-        @if (showSideMenu) {
-          <img
-            class="logout-btn"
-            src="assets/menu-icons/logout.svg"
-            alt="logout icon"
-            (click)="logout()"
-          />
+          <p class="user-email">user&#64;spike.com</p>
+        </div>
+        } @if (showSideMenu) {
+        <img
+          class="logout-btn"
+          src="assets/menu-icons/logout.svg"
+          alt="logout icon"
+          (click)="logout()"
+        />
         }
       </div>
     </div>

@@ -18,6 +18,14 @@
   }
 }
 
+.logo-container {
+  @apply flex justify-center pt-1 pb-6 px-4;
+}
+
+.logo-container img {
+  @apply w-8 h-8;
+}
+
 .sidebar-content {
   @apply flex flex-col h-full mx-auto no-scrollbar pt-8;
 
