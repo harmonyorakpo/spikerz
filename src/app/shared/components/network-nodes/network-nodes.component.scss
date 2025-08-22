@@ -1,33 +1,24 @@
 .network-container {
-  @apply bg-gray-50 rounded-lg flex flex-col;
-  @apply px-3 py-3;
-  @apply md:px-4 md:py-4;
-  @apply lg:px-6;
+  @apply bg-gray-50 rounded-lg flex flex-col px-3 py-3 md:px-4 md:py-4 lg:px-6;
 }
 
 .network-flow-wrapper {
-  @apply mx-auto;
-  @apply p-2;
-  @apply md:p-3;
+  @apply mx-auto p-2 md:p-3;
 }
 
 .network-main-flow {
-  @apply flex items-center;
-  @apply justify-start;
-  @apply md:justify-center;
+  @apply flex items-center justify-start md:justify-center;
 }
 
 .end-servers-container {
-  @apply flex flex-col justify-between;
-  @apply h-32;
-  @apply md:h-40;
-  @apply lg:h-48;
+  @apply flex flex-col justify-between lg:h-48 md:h-40 h-32;
+  @apply;
 }
 
 .arrow-image {
-  @apply w-16  xl:w-16;
+  @apply w-16;
 }
 
 .double-arrow-image {
-  @apply w-52 lg:w-52;
+  @apply w-52;
 }
