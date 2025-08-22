@@ -1,23 +1,22 @@
 .data-list {
   @apply flex flex-col;
   @apply gap-y-2;
-  @apply md:gap-y-3;
+  @apply lg:gap-y-3;
 }
 
 .data-item {
-  @apply flex justify-between;
-  @apply flex-col gap-1;
-  @apply md:flex-row md:gap-0;
+  @apply flex flex-col gap-1 lg:flex-row lg:gap-4;
 }
 
 .data-label {
   @apply font-bold;
   @apply text-sm;
+  @apply lg:min-w-48;
 }
 
 .data-value {
   @apply text-xs;
-  @apply md:text-sm;
+  @apply lg:text-sm;
 }
 
 .check-icon {
@@ -30,10 +29,10 @@
 
 .divider-top {
   @apply mb-3;
-  @apply md:mb-4;
+  @apply lg:mb-4;
 }
 
 .divider-bottom {
   @apply mt-3;
-  @apply md:mt-4;
+  @apply lg:mt-4;
 }
