@@ -8,9 +8,8 @@ describe('ContextualRiskChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContextualRiskChartComponent]
-    })
-    .compileComponents();
+      imports: [ContextualRiskChartComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ContextualRiskChartComponent);
     component = fixture.componentInstance;

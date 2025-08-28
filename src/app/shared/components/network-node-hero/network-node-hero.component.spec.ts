@@ -8,9 +8,8 @@ describe('NetworkNodeHeroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NetworkNodeHeroComponent]
-    })
-    .compileComponents();
+      imports: [NetworkNodeHeroComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NetworkNodeHeroComponent);
     component = fixture.componentInstance;

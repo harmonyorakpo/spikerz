@@ -11,10 +11,10 @@
   @apply bg-white rounded-2xl shadow-md px-6 pt-6;
   @apply lg:h-screen lg:overflow-y-auto lg:sticky lg:top-0;
   @apply pb-6;
-  
+
   scrollbar-width: none;
   -ms-overflow-style: none;
-  
+
   &::-webkit-scrollbar {
     display: none;
   }

@@ -74,7 +74,6 @@
       @apply text-gray-500;
     }
 
-    
     &.inactive:hover {
       @apply text-primary !important;
     }
@@ -88,7 +87,6 @@
     @apply bg-primary rounded-md;
   }
 
-  
   &:hover {
     .menu-text {
       @apply text-primary;
@@ -100,7 +98,6 @@
       @apply text-primary font-medium;
     }
 
-    
     &.inactive:hover {
       @apply text-primary !important;
     }

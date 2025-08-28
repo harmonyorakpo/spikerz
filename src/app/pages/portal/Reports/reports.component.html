@@ -1,31 +1,27 @@
 <div class="report">
   <div class="card">
+    @if (contentBlocks$ | async; as contentBlocks) { @for (block of
+    contentBlocks; track block.title) {
     <app-content-block-component
-      [title]="'Description'"
-      [description]="
-        'Lorem ipsum dolor sit amet consectetur. Aenean sodales pellentesque gravida nibh et magna faucibus. Dui commodo ut metus amet egestas habitant viverra. Quisque fusce senectus facilisis non diam leo nulla sem pellentesque. Sit in vel sed cursus metus sit fringilla vestibulum.'
-      "
+      [title]="block.title"
+      [description]="block.description"
     ></app-content-block-component>
-    <app-content-block-component
-      [title]="'Extra'"
-      [description]="
-        'Lorem ipsum dolor sit amet consectetur. Tempus a id adipiscing fames egestas tellus dis pretium tempus. Justo nisl nisl lorem lectus id ornare. Rhoncus in egestas in amet porttitor pellentesque sit. Amet gravida integer velit felis. Eu consectetur interdum auctor sed aliquam. Eu pulvinar accumsan sed id. Duis a aliquam eu quisque commodo lectus. Lectus ipsum velit purus viverra vulputate viverra in nunc nulla. Euismod rhoncus mauris urna orci gravida sagittis netus. Amet mus in vel etiam. Interdum habitant congue massa in etiam sit. Commodo nibh viverra lobortis augue lorem quam lorem suspendisse.'
-      "
-    ></app-content-block-component>
+    } }
+
     <app-lorem-ipsum></app-lorem-ipsum>
     <app-lorem-ipsum-cards></app-lorem-ipsum-cards>
   </div>
 
   <div class="sub-card">
     <div>
-      <h1 class="mb-3" >Lorem Lorem Lorem</h1>
+      <h1 class="mb-3">Lorem Lorem Lorem</h1>
       <div>
         <app-network-nodes></app-network-nodes>
       </div>
     </div>
 
-    <div >
-      <h1 class="mb-3" >Lorem Ipsum Dolor Sit</h1>
+    <div>
+      <h1 class="mb-3">Lorem Ipsum Dolor Sit</h1>
       <div class="risk-section">
         <div class="risk-chart">
           <app-contextual-risk-chart></app-contextual-risk-chart>

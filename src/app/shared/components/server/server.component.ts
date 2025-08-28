@@ -17,13 +17,16 @@ export class ServerComponent {
   @Input() topIconColor: string = 'bg-red-600';
   @Input() address: string = '';
 
-  @Output() serverHover = new EventEmitter<{serverName: string, address: string}>();
+  @Output() serverHover = new EventEmitter<{
+    serverName: string;
+    address: string;
+  }>();
   @Output() serverLeave = new EventEmitter<void>();
 
   onMouseEnter() {
     this.serverHover.emit({
       serverName: this.serverName,
-      address: this.address || ''
+      address: this.address || '',
     });
   }
 
