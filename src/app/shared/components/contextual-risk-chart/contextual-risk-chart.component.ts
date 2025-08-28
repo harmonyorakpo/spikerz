@@ -8,12 +8,15 @@ import {
   OnChanges,
   SimpleChanges,
   inject,
+  OnDestroy,
 } from '@angular/core';
 import { AssetRiskItem } from '../../../core/models/asset-risk';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { AssetRiskService } from '../../../services/asset-risk.service';
+import { Subject } from 'rxjs/internal/Subject';
+import { takeUntil } from 'rxjs/internal/operators/takeUntil';
 
 @Component({
   selector: 'app-contextual-risk-chart',
@@ -21,8 +24,11 @@ import { AssetRiskService } from '../../../services/asset-risk.service';
   templateUrl: './contextual-risk-chart.component.html',
   styleUrl: './contextual-risk-chart.component.scss',
 })
-export class ContextualRiskChartComponent implements OnInit, OnChanges {
+export class ContextualRiskChartComponent
+  implements OnInit, OnDestroy, OnChanges
+{
   private assetService = inject(AssetRiskService);
+  private destroy$ = new Subject<void>();
   @Input() assetItems: AssetRiskItem[] = [];
 
   @Input() showPagination: boolean = true;
@@ -37,11 +43,14 @@ export class ContextualRiskChartComponent implements OnInit, OnChanges {
   displayedItems: AssetRiskItem[] = [];
 
   ngOnInit(): void {
-    this.assetService.getAssetItems().subscribe((items) => {
-      this.assetItems = items;
-      this.calculatePagination();
-      this.updateDisplayedItems();
-    });
+    this.assetService
+      .getAssetItems()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((items) => {
+        this.assetItems = items;
+        this.calculatePagination();
+        this.updateDisplayedItems();
+      });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -112,5 +121,10 @@ export class ContextualRiskChartComponent implements OnInit, OnChanges {
       default:
         return 'bg-gray-100 text-gray-700';
     }
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }
