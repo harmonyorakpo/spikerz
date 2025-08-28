@@ -1,10 +1,10 @@
 <div class="report">
   <div class="card">
     @if (contentBlocks$ | async; as contentBlocks) {
-      @for (block of contentBlocks; track block.title) {
+      @for (content of contentBlocks; track content.id) {
         <app-content-block-component
-          [title]="block.title"
-          [description]="block.description"
+          [title]="content.title"
+          [description]="content.description"
         ></app-content-block-component>
       }
     }

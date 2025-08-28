@@ -20,12 +20,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('spikerz');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, spikerz',
-    );
-  });
+  // No test for h1, as the template only contains <router-outlet>
 });

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ContextualRiskChartComponent } from './contextual-risk-chart.component';
 
 describe('ContextualRiskChartComponent', () => {
@@ -8,7 +8,7 @@ describe('ContextualRiskChartComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContextualRiskChartComponent],
+      imports: [ContextualRiskChartComponent, HttpClientTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ContextualRiskChartComponent);

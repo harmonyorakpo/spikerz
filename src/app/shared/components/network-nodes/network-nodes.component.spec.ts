@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { NetworkNodesComponent } from './network-nodes.component';
 
 describe('NetworkNodesComponent', () => {
@@ -8,7 +8,7 @@ describe('NetworkNodesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NetworkNodesComponent],
+      imports: [NetworkNodesComponent, HttpClientTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(NetworkNodesComponent);
