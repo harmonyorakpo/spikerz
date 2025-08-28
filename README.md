@@ -25,7 +25,6 @@ A modern, responsive web application for real-time network monitoring, security 
 - **User Interface**
   - Modern, responsive design
   - Intuitive navigation
-  - Dark/Light mode support
   - Interactive charts and graphs
 
 ## Tech Stack
