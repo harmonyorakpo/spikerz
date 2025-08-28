@@ -1,4 +1,3 @@
-
 export interface AssetRiskItem {
   id: string;
   name: string;

@@ -16,7 +16,7 @@ export class SideMenuComponent {
 
   constructor(
     private navigationService: NavigationService,
-    private router: Router
+    private router: Router,
   ) {
     this.navigationService.items.subscribe((menuItems) => {
       this.menuItems = menuItems;

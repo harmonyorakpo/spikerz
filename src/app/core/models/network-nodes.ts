@@ -4,7 +4,6 @@ export interface NetworkNode {
   ipAddress?: string;
   iconPath: string;
   riskLevel?: 'Critical' | 'High' | 'Medium' | 'Low';
-
 }
 
 export interface NetworkConnection {

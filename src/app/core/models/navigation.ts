@@ -5,4 +5,3 @@ export interface Navigation {
   iconActive?: string;
   active: boolean;
 }
-

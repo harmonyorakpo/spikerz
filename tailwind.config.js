@@ -5,10 +5,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          extraLight:"#525D73",
+          extraLight: "#525D73",
           light: "#E9FAF0",
           DEFAULT: "#02983E",
-
         },
         accent: {
           DEFAULT: "#FAFAFA",

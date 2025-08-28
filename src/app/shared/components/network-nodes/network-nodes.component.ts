@@ -20,7 +20,7 @@ export class NetworkNodesComponent {
   hoveredAddress: string = '';
   private hideTimeout: any;
 
-  onServerHover(data: {serverName: string, address: string}) {
+  onServerHover(data: { serverName: string; address: string }) {
     if (this.hideTimeout) {
       clearTimeout(this.hideTimeout);
       this.hideTimeout = null;

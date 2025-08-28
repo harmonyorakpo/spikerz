@@ -1,12 +1,13 @@
 <div class="report">
   <div class="card">
-    @if (contentBlocks$ | async; as contentBlocks) { @for (block of
-    contentBlocks; track block.title) {
-    <app-content-block-component
-      [title]="block.title"
-      [description]="block.description"
-    ></app-content-block-component>
-    } }
+    @if (contentBlocks$ | async; as contentBlocks) {
+      @for (block of contentBlocks; track block.title) {
+        <app-content-block-component
+          [title]="block.title"
+          [description]="block.description"
+        ></app-content-block-component>
+      }
+    }
 
     <app-lorem-ipsum></app-lorem-ipsum>
     <app-lorem-ipsum-cards></app-lorem-ipsum-cards>

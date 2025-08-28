@@ -1,70 +1,30 @@
-@if(item === 'Loremipsumm'){
-<div class="modal-card-left">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h3 class="modal-title">Lorem Ipsum Dolor Sit</h3>
-    </div>
-
-    <div class="ip-grid-container">
-      <div class="ip-grid">
-        @for (ip of ipAddresses; track $index) {
-        <div class="ip-item" [class.ip-item-first]="$index === 0">
-          <span class="ip-text">{{ ip }}</span>
-        </div>
-        }
+@if (item === "Loremipsumm") {
+  <div class="modal-card-left">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Lorem Ipsum Dolor Sit</h3>
       </div>
-    </div>
 
-    <div class="footer-item">
-      <span class="footer-text">Lorem: 1.2.3.4</span>
-    </div>
-  </div>
-</div>
-
-} @if(item === 'Loremipsu'){
-
-<div class="modal-card-center">
-  <div class="modal-content-flex">
-    <div class="header-row">
-      <span class="icon-container-xs">
-        <img src="assets/icons/server.svg" alt="Server Icon" class="icon-sm" />
-      </span>
-      <span class="server-name">
-        {{ item }}
-      </span>
-    </div>
-
-    <div class="content-row">
-      <span class="list-icon">
-        <img class="icon-sm" src="assets/icons/list.svg" alt="list" />
-      </span>
-
-      <div class="content-wrapper">
-        <span>Lorem: Loremipsum Loremipsum</span>
-
-        @for (ip of ips; track $index) {
-        <div class="ip-badge">
-          <span class="ip-badge-text">{{ ip }}</span>
+      <div class="ip-grid-container">
+        <div class="ip-grid">
+          @for (ip of ipAddresses; track $index) {
+            <div class="ip-item" [class.ip-item-first]="$index === 0">
+              <span class="ip-text">{{ ip }}</span>
+            </div>
+          }
         </div>
-        }
+      </div>
 
-        <span>Loremipsum</span>
-
-        @for (ip of ips; track $index) {
-        <div class="ip-badge">
-          <span class="ip-badge-text">{{ ip }}</span>
-        </div>
-        }
+      <div class="footer-item">
+        <span class="footer-text">Lorem: 1.2.3.4</span>
       </div>
     </div>
   </div>
-</div>
-
-} @if(item === 'Loremipsumdolorsit'){
-<div class="modal-card-right">
-  <div class="modal-content-detailed">
-    <div class="detailed-header">
-      <div class="icon-with-badge">
+}
+@if (item === "Loremipsu") {
+  <div class="modal-card-center">
+    <div class="modal-content-flex">
+      <div class="header-row">
         <span class="icon-container-xs">
           <img
             src="assets/icons/server.svg"
@@ -72,44 +32,87 @@
             class="icon-sm"
           />
         </span>
-
-        <div class="notification-badge">
-          <span>
-            <img
-              class="badge-icon"
-              src="assets/network-nodes/thick-shield.svg"
-              alt="shield"
-            />
-          </span>
-        </div>
-      </div>
-      <div class="server-info">
         <span class="server-name">
           {{ item }}
         </span>
-        <span class="server-address">{{ address }}</span>
       </div>
-    </div>
 
-    <div class="detailed-content">
-      <span class="list-icon-large">
-        <img class="icon-sm" src="assets/icons/list.svg" alt="list" />
-      </span>
+      <div class="content-row">
+        <span class="list-icon">
+          <img class="icon-sm" src="assets/icons/list.svg" alt="list" />
+        </span>
 
-      <div class="content-wrapper">
-        <span>Lorem:</span>
+        <div class="content-wrapper">
+          <span>Lorem: Loremipsum Loremipsum</span>
 
-        <div class="highlight-badge-yellow">
-          <span class="highlight-text-yellow">Lorem "Ipsum"</span>
-        </div>
+          @for (ip of ips; track $index) {
+            <div class="ip-badge">
+              <span class="ip-badge-text">{{ ip }}</span>
+            </div>
+          }
 
-        <span>Loremipsum</span>
+          <span>Loremipsum</span>
 
-        <div class="highlight-badge-blue">
-          <span class="highlight-text-blue">Lorem 1234,5678</span>
+          @for (ip of ips; track $index) {
+            <div class="ip-badge">
+              <span class="ip-badge-text">{{ ip }}</span>
+            </div>
+          }
         </div>
       </div>
     </div>
   </div>
-</div>
+}
+@if (item === "Loremipsumdolorsit") {
+  <div class="modal-card-right">
+    <div class="modal-content-detailed">
+      <div class="detailed-header">
+        <div class="icon-with-badge">
+          <span class="icon-container-xs">
+            <img
+              src="assets/icons/server.svg"
+              alt="Server Icon"
+              class="icon-sm"
+            />
+          </span>
+
+          <div class="notification-badge">
+            <span>
+              <img
+                class="badge-icon"
+                src="assets/network-nodes/thick-shield.svg"
+                alt="shield"
+              />
+            </span>
+          </div>
+        </div>
+        <div class="server-info">
+          <span class="server-name">
+            {{ item }}
+          </span>
+          <span class="server-address">{{ address }}</span>
+        </div>
+      </div>
+
+      <div class="detailed-content">
+        <span class="list-icon-large">
+          <img class="icon-sm" src="assets/icons/list.svg" alt="list" />
+        </span>
+
+        <div class="content-wrapper">
+          <span>Lorem:</span>
+
+          <div class="highlight-badge-yellow">
+            <span class="highlight-text-yellow">Lorem "Ipsum"</span>
+          </div>
+
+          <span>Loremipsum</span>
+
+          <div class="highlight-badge-blue">
+            <span class="highlight-text-blue">Lorem 1234,5678</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 }

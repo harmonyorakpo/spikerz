@@ -27,5 +27,9 @@ export interface CardData {
   subtitle?: string;
   icon?: CardIcon;
   content: CardContentItem[];
-  actions?: { label: string; action: () => void; type?: 'primary' | 'secondary' }[];
+  actions?: {
+    label: string;
+    action: () => void;
+    type?: 'primary' | 'secondary';
+  }[];
 }
