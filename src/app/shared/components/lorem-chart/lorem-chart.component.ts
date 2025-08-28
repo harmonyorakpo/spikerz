@@ -6,6 +6,7 @@ import {
   ViewChild,
   AfterViewInit,
   OnDestroy,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -16,6 +17,9 @@ import {
 } from 'chart.js';
 import { RiskData } from '../../../core/models/risk-data';
 
+import { AssetRiskService } from '../../../services/asset-risk.service';
+import { Subject, takeUntil } from 'rxjs';
+
 Chart.register(...registerables);
 
 @Component({
@@ -25,15 +29,12 @@ Chart.register(...registerables);
   styleUrl: './lorem-chart.component.scss',
 })
 export class LoremChartComponent implements OnInit, AfterViewInit, OnDestroy {
+  private assetRiskService = inject(AssetRiskService);
+  private destroy$ = new Subject<void>();
   @ViewChild('chartCanvas', { static: true })
   chartCanvas!: ElementRef<HTMLCanvasElement>;
 
-  @Input() riskData: RiskData = {
-    critical: 2,
-    high: 0,
-    medium: 0,
-    low: 0,
-  };
+  @Input() riskData!: RiskData;
 
   private chart: Chart<'doughnut'> | null = null;
 
@@ -41,7 +42,14 @@ export class LoremChartComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.riskData.critical;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.assetRiskService
+      .getRiskSummary()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((summary) => {
+        this.riskData = summary;
+      });
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -53,6 +61,9 @@ export class LoremChartComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.chart) {
       this.chart.destroy();
     }
+
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   private createChart(): void {
