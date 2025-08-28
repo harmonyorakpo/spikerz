@@ -7,11 +7,13 @@ import {
   OnInit,
   OnChanges,
   SimpleChanges,
+  inject,
 } from '@angular/core';
 import { AssetRiskItem } from '../../../core/models/asset-risk';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { AssetRiskService } from '../../../services/asset-risk.service';
 
 @Component({
   selector: 'app-contextual-risk-chart',
@@ -20,50 +22,8 @@ import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
   styleUrl: './contextual-risk-chart.component.scss',
 })
 export class ContextualRiskChartComponent implements OnInit, OnChanges {
-  @Input() assetItems: AssetRiskItem[] = [
-    {
-      id: '1',
-      name: 'Loremipsumdolorsit',
-      ipAddress: '192.168.1.1',
-      riskLevel: 'Critical',
-      iconPath: 'assets/icons/server.svg',
-    },
-    {
-      id: '2',
-      name: 'Loremipsumdolorsit002',
-      ipAddress: '192.168.1.2',
-      riskLevel: 'Critical',
-      iconPath: 'assets/icons/server.svg',
-    },
-    {
-      id: '3',
-      name: 'Loremipsumdolorsit003',
-      ipAddress: '192.168.1.3',
-      riskLevel: 'High',
-      iconPath: 'assets/icons/server.svg',
-    },
-    {
-      id: '4',
-      name: 'Loremipsumdolorsit004',
-      ipAddress: '192.168.1.4',
-      riskLevel: 'Medium',
-      iconPath: 'assets/icons/server.svg',
-    },
-    {
-      id: '5',
-      name: 'Loremipsumdolorsit005',
-      ipAddress: '192.168.1.5',
-      riskLevel: 'Low',
-      iconPath: 'assets/icons/server.svg',
-    },
-    {
-      id: '6',
-      name: 'Loremipsumdolorsit006',
-      ipAddress: '192.168.1.4',
-      riskLevel: 'Medium',
-      iconPath: 'assets/icons/server.svg',
-    },
-  ];
+  private assetService = inject(AssetRiskService);
+  @Input() assetItems: AssetRiskItem[] = [];
 
   @Input() showPagination: boolean = true;
   @Input() pageSize: number = 2;
@@ -77,8 +37,11 @@ export class ContextualRiskChartComponent implements OnInit, OnChanges {
   displayedItems: AssetRiskItem[] = [];
 
   ngOnInit(): void {
-    this.calculatePagination();
-    this.updateDisplayedItems();
+    this.assetService.getAssetItems().subscribe((items) => {
+      this.assetItems = items;
+      this.calculatePagination();
+      this.updateDisplayedItems();
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
