@@ -19,5 +19,4 @@ export class ServerDataService {
   getServerInfo(): Observable<ServerInfo[]> {
     return this.http.get<ServerInfo[]>('assets/config/server-info.json');
   }
-
 }

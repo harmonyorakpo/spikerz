@@ -7,7 +7,7 @@ import { Navigation } from '../core/models/navigation';
 })
 export class NavigationService {
   constructor() {}
-  
+
   showSideBar: boolean = false;
   currentTitle = new BehaviorSubject<string>('Dashboard');
 
@@ -58,7 +58,7 @@ export class NavigationService {
       icon: 'tenants.png',
       active: false,
     },
-    
+
     {
       path: '/settings',
       title: 'Settings',
@@ -81,28 +81,24 @@ export class NavigationService {
 
   items = new BehaviorSubject<Navigation[]>(this.MENUITEMS);
 
-  
   setActiveItem(path: string) {
-    this.MENUITEMS.forEach(item => {
+    this.MENUITEMS.forEach((item) => {
       item.active = item.path === path;
     });
     this.items.next(this.MENUITEMS);
   }
 
-  
   addMenuItem(item: Navigation) {
     this.MENUITEMS.push(item);
     this.items.next(this.MENUITEMS);
   }
 
-  
   getMenuItemByPath(path: string): Navigation | undefined {
-    return this.MENUITEMS.find(item => item.path === path);
+    return this.MENUITEMS.find((item) => item.path === path);
   }
 
- 
   resetActiveStates() {
-    this.MENUITEMS.forEach(item => {
+    this.MENUITEMS.forEach((item) => {
       item.active = false;
     });
     this.items.next(this.MENUITEMS);
