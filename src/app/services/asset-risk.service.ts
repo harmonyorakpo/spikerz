@@ -8,13 +8,13 @@ import { RiskData } from '../core/models/risk-data';
   providedIn: 'root',
 })
 export class AssetRiskService {
-  private configUrl = 'assets/config/asset-items.json';
+  private assetItemsUrl = 'assets/config/asset-items.json';
   private riskSummaryUrl = 'assets/config/risk-summary.json';
 
   private http = inject(HttpClient);
 
   getAssetItems(): Observable<AssetRiskItem[]> {
-    return this.http.get<AssetRiskItem[]>(this.configUrl);
+    return this.http.get<AssetRiskItem[]>(this.assetItemsUrl);
   }
 
   getRiskSummary(): Observable<RiskData> {
