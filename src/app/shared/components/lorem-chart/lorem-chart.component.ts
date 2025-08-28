@@ -38,10 +38,6 @@ export class LoremChartComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private chart: Chart<'doughnut'> | null = null;
 
-  get totalCritical(): number {
-    return this.riskData.critical;
-  }
-
   ngOnInit(): void {
     this.assetRiskService
       .getRiskSummary()
@@ -51,6 +47,9 @@ export class LoremChartComponent implements OnInit, AfterViewInit, OnDestroy {
       });
   }
 
+  get totalCritical(): number {
+    return this.riskData?.critical ?? 0;
+  }
   ngAfterViewInit(): void {
     setTimeout(() => {
       this.createChart();
