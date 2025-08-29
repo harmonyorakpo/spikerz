@@ -1,0 +1,9 @@
+{
+  "BASE_URL": "assets/config",
+  "SERVER_CARD_DATA": "/server-card-data.json",
+  "SERVER_INFO": "/server-info.json",
+  "STATUS_ITEMS": "/network-status-items.json",
+  "CONTENT_BLOCKS": "/content-blocks.json",
+  "ASSET_ITEMS": "/asset-items.json",
+  "RISK_SUMMARY": "/risk-summary.json"
+}

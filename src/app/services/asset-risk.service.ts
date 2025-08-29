@@ -3,21 +3,23 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AssetRiskItem } from '../core/models/asset-risk';
 import { RiskData } from '../core/models/risk-data';
+import { AppConfigService } from './config/app-config.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AssetRiskService {
-  private assetItemsUrl = 'assets/config/asset-items.json';
-  private riskSummaryUrl = 'assets/config/risk-summary.json';
+  private appConfigService = inject(AppConfigService);
 
   private http = inject(HttpClient);
 
   getAssetItems(): Observable<AssetRiskItem[]> {
-    return this.http.get<AssetRiskItem[]>(this.assetItemsUrl);
+    const { BASE_URL, ASSET_ITEMS } = this.appConfigService.appConfig;
+    return this.http.get<AssetRiskItem[]>(`${BASE_URL}${ASSET_ITEMS}`);
   }
 
   getRiskSummary(): Observable<RiskData> {
-    return this.http.get<RiskData>(this.riskSummaryUrl);
+    const { BASE_URL, RISK_SUMMARY } = this.appConfigService.appConfig;
+    return this.http.get<RiskData>(`${BASE_URL}${RISK_SUMMARY}`);
   }
 }
